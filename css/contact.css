@@ -60,7 +60,7 @@ fieldset{
     border-left: 5px blue solid;
     border-radius: 30px;
     width: 500px;
-    
+    padding: 20px;
 }
 footer{
     position: absolute;

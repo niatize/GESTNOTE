@@ -6,6 +6,7 @@
     <title>Inscription</title>
     <link rel="stylesheet" href="./css/all_pages.css">
     <link rel="stylesheet" href="./css/allpage_css_responsive.css">
+    <link rel="stylesheet" href="./css/inscription.css">
 </head>
 <body>
     <header>
@@ -33,7 +34,24 @@
         </nav>
     </header><br><br>
 
-
+    <main>
+        <div class="container">
+            <div class="content">
+                <fieldset>
+                    <legend align="center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#e5a50a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-face-icon lucide-scan-face"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+                    </legend>
+                    <h1 align="center">QUI EST-VOUS ?</h1><br><br>
+                    <form action="#" method="post">
+                        <input type="radio" id="professeur" name="personne_se_connectant" value="professeur" required> <label for="professeur">Un professeur</label><br><br>
+                        <input type="radio" id="élève" name="personne_se_connectant" value="élève" required> <label for="élève"></label>Un élève</label><br><br>
+                        <input type="radio" id="Administration" name="personne_se_connectant" value="Administration" required> <label for="Administration">Un membre de l'administration</label><br><br>
+                        <input type="submit" value="SUIVANT" style="background-color: rgb(0, 119, 255);color: white;border-radius: 20px 20px;box-shadow: none;">
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+    </main>
 
 </body>
 </html>
