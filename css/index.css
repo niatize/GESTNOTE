@@ -50,6 +50,7 @@ button{
     border-color: gray;
     background-color: grey;
     border-radius: 20px;
+    padding: 20px;
 }
 a{
     text-decoration: none;
@@ -79,6 +80,7 @@ b{
     color:white;
 }
 h1{
+    font-family: sans-serif;
     font-size: 30px;
 }
 .container{
@@ -98,7 +100,7 @@ h1{
 
 b{
     font-size: 40px;
-    font-family: Ubuntu Sans mono;
+    font-family: serif;
 }
 footer{
     color:white;
