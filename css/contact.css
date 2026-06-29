@@ -20,9 +20,13 @@
     border: none;
     border-left: 5px blue solid;
     border-radius: 30px;
+    padding: 20px;
+
 }
 .second_content{
-    display: flex;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     justify-content: space-around;
 }
 body{
@@ -40,7 +44,8 @@ input{
     height: 30px; 
 }
 input,textarea{
-    width: 90%;
+    width: 80%;
+    color: #ffffff;
     background-color: grey;
 }
 input[type="submit"]{
@@ -62,13 +67,17 @@ fieldset{
     width: 500px;
     padding: 20px;
 }
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%
-}
+
 input:focus,textarea:focus{
     border-color: gold;
     transform: scale(1.05);
     transition: 0.5s
+}
+#contact{
+    background-color: gray;
+    border-radius: 20px 20px;
+    box-shadow: none;
+}
+#contact:hover{
+    border-radius: 10px 5px;
 }

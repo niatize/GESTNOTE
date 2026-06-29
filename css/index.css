@@ -50,7 +50,7 @@ button{
     border-color: gray;
     background-color: grey;
     border-radius: 20px;
-    padding: 20px;
+    padding: 200px;
 }
 a{
     text-decoration: none;
@@ -104,4 +104,7 @@ b{
 }
 footer{
     color:white;
+}
+.acceuil{
+    background-color: gray;border-radius: 20px 20px;box-shadow: none;
 }

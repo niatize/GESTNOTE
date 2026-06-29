@@ -29,6 +29,7 @@ ol{
     width: fit-content;
 }
 li{
+    padding: 2px;
     list-style: none;
     width: fit-content;
     margin-left: 50px;
@@ -50,6 +51,7 @@ a:hover{
     color: gold;
 }
 footer{
+    padding: 20px;
     background-color: black;
     color:white;
     height: 40px;

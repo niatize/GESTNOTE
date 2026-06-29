@@ -5,3 +5,11 @@
     justify-content: center;
     align-items: center;
 }
+#inscription{
+    background-color: gray;
+    border-radius: 10px ;
+    box-shadow: none;
+}
+#inscription:hover{
+    border-radius: 10px 5px;
+}

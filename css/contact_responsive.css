@@ -1,0 +1,7 @@
+@media (max-width:900px) {
+input,textarea{
+    width: 60%;
+    color: #ffffff;
+    background-color: grey;
+}
+}
