@@ -76,7 +76,7 @@ b{
     font-weight: 1000px;
 }
 .first_section{
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.613);
     color:white;
 }
 h1{
@@ -95,7 +95,7 @@ h1{
     animation: down 2s infinite;
 }
 .section{
-    background-color:black;
+    background-color:rgba(0, 0, 0, 0.564);
 }
 
 b{
