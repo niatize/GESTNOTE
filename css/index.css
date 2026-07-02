@@ -14,9 +14,9 @@ body{
     color: white;
 }
 .first_content:hover{
-    animation: pulse  .5s;
+    animation: ok  .5s;
 }
-@keyframes pulse  {
+@keyframes ok  {
     0%{position: relative;
     top: 0;
 }
