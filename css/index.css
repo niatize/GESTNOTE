@@ -14,9 +14,9 @@ body{
     color: white;
 }
 .first_content:hover{
-    animation: ok .5s infinite;
+    animation: ok  .5s;
 }
-@keyframes ok  {
+@keyframes op  {
     0%{position: relative;
     top: 0;
 }
