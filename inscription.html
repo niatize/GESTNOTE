@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/all_pages.css">
     <link rel="stylesheet" href="./css/allpage_css_responsive.css">
     <link rel="stylesheet" href="./css/inscription.css">
+    <link rel="stylesheet" href="JS/all_pages.js">
 </head>
 <body>
     <header>
@@ -18,7 +19,7 @@
                         <path d="M22 10v6"></path>
                         <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
                     </svg>
-                    <b style="color: goldenrod;font-size: 23px;">GESTNOTE</b></li>
+                    <b style="color: goldenrod;"class="logo">GESTNOTE</b></li>
             </ol>
             <ol>
             <div class="nav_link">
@@ -35,22 +36,42 @@
     </header><br><br>
 
     <main>
-        <div class="container">
+        <section id="section_1">
+            <div class="container">
             <div class="content">
                 <fieldset>
                     <legend align="center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#e5a50a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-face-icon lucide-scan-face"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
                     </legend>
-                    <h1 align="center">QUI EST-VOUS ?</h1><br><br>
+                    <h1 align="center">QUI ESTES VOUS ?</h1><br><br>
                     <form action="#" method="post">
-                        <input type="radio" id="professeur" name="personne_se_connectant" value="professeur" required> <label for="professeur">Un professeur</label><br><br>
-                        <input type="radio" id="élève" name="personne_se_connectant" value="élève" required> <label for="élève"></label>Un élève</label><br><br>
-                        <input type="radio" id="Administration" name="personne_se_connectant" value="Administration" required> <label for="Administration">Un membre de l'administration</label><br><br>
-                        <input type="submit" value="SUIVANT" style="background-color: rgb(0, 119, 255);color: white;border-radius: 20px 20px;box-shadow: none;">
+                        <input type="radio" id="professeur" name="personne_se_connectant" value="professeur"> <label for="professeur">Un professeur</label><br><br>
+                        <input type="radio" id="élève" name="personne_se_connectant" value="élève"> <label for="élève">Un élève</label><br><br>
+                        <input type="radio" id="Administration" name="personne_se_connectant" value="Administration"> <label for="Administration">Un membre de l'administration</label><br><br>
+                        <input type="submit" value="SUIVANT" >
                     </form>
                 </fieldset>
             </div>
         </div>
+        </section>
+        <section id="section_2">
+             <div class="container">
+            <div class="content">
+                <fieldset>
+                    <legend align="center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#e5a50a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-face-icon lucide-scan-face"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+                    </legend>
+                    <h1 align="center">VOUS ESTES DE QUEL ETABLISSEMENT ?</h1><br><br>
+                    <form action="#" method="post">
+                        <input type="radio" id="rapha" name="rapha" value="rapha"> <label for="rapha">RAPHA</label><br><br>
+                        <input type="radio" id="cefti" name="cefti" value="cefti"> <label for="cefti">CEFTI</label><br><br>
+                        <input type="radio" id="Administration" name="personne_se_connectant" value="Administration"> <label for="autres"><a href="autres.html" style="border-bottom: 1px solid blue;">Autres...</a></label><br><br>
+                        <input type="submit" value="SUIVANT" id="send_1">
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+        </section>
     </main>
 
 </body>

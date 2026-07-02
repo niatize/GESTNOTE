@@ -13,3 +13,36 @@
 #inscription:hover{
     border-radius: 10px 5px;
 }
+label{
+    padding: 20px;
+}
+label:hover{
+    color: gold;
+    cursor: pointer;
+}
+fieldset{
+    padding: 30px;
+    border-color: gold;
+    transform: scale(1);
+    transition: 1s;
+}
+fieldset:hover{
+    transform: scale(1.1);
+    transition: 1s;
+    box-shadow: inset 0 0 4px 5px rgba(179, 156, 27, 0.537);
+}
+input[type="submit"]{
+   display: flex;
+   margin-left: auto;
+   padding: 5px;
+   background-color: rgb(0, 119, 255);
+   color: white;
+   border-radius: 10px 5px;
+   box-shadow: none;
+   transform: scale(1);
+    transition: 1s;
+}
+input[type="submit"]:hover{
+    transform: scale(1.2);
+    transition: 0.5s;
+}
