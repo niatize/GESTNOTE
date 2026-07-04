@@ -4,37 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="./css/all_pages.css">
-    <link rel="stylesheet" href="./css/allpage_css_responsive.css">
-    <link rel="stylesheet" href="./css/contact.css">
-    <link rel="stylesheet" href="css/contact_responsive.css">
-    <link rel="stylesheet" href="JS/all_pages.js">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/header_responsive.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/contact_responsive.csss">
 </head>
 <body>
     <header>
-        <nav>
-            <ol><li style="transform: none;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(0, 119, 255)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap h-7 w-7 text-primary-foreground">
-                        <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
-                        </path>
+     <div class="container">
+      
+        <div class="logo">
+             <svg xmlns="http://www.w3.org/2000/svg" 
+                    width="26" height="26" viewBox="0 0 24 24" 
+                    fill="none" stroke="goldenrod" 
+                    stroke-width="2" stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-graduation-cap h-7 w-7 text-primary-foreground">
+                <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                </path>
                         <path d="M22 10v6"></path>
                         <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
-                    </svg>
-                    <b style="color: goldenrod;"class="logo">GESTNOTE</b></li>
-            </ol>
-            <ol>
-            <div class="nav_link">
-                <li><a href="index.html" >ACCEUIL</a></li>
-            <li><a href="contact.html" id="contact">CONTACT</a></li>
-            <li><a href="aide.html">AIDE</a></li>
-            <li><a href="inscription.html">S'INSCRIRE</a></li>
-            </div>
-        </ol>
-        <ol>
-            <li><a href="connexion.html">CONNEXION</a></li>
-        </ol>
-        </nav>
-    </header><br><br>
+                    </svg><span id="logo_style">GESTNOTE</span>
+        </div>
+          <div class="menu_burger" id="menu_burger">
+            <div class="menu" id="first"></div>
+            <div class="menu" id="second"></div>
+            <div class="menu" id="tird"></div>
+        </div>
+        <div class="nav_links" id="nav_links">
+            <nav>
+                <ol>
+                    <li><a href="index.html">ACCEUIL</a></li>
+                    <li><a href="démo.html">DEMO</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="connexion.html">CONNEXION</a></li>
+                    <li class="theme" id="theme_sombre">     <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                 height="24" viewBox="0 0 24 24" fill="none" 
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon">
+                  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>
+                </svg>THEME sombre</li>
+                    <li class="theme" id="theme_clair"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-sun-icon lucide-sun"><circle cx="12" 
+                  cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/>
+                  <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+                  <path d="M2 12h2"/><path d="M20 12h2"/>
+                    <path d="m6.34 17.66-1.41 1.41"/>
+                    <path d="m19.07 4.93-1.41 1.41"/></svg> THEME clair 
+                    </li>
+               
+        <div class="them_mode">
+            <span id="night_mode">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                 height="24" viewBox="0 0 24 24" fill="none" 
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="lucide lucide-moon-icon lucide-moon">
+                  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>
+                </svg>
+            </span>
+            <span id="light_mode">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-sun-icon lucide-sun"><circle cx="12" 
+                  cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/>
+                  <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+                  <path d="M2 12h2"/><path d="M20 12h2"/>
+                    <path d="m6.34 17.66-1.41 1.41"/>
+                    <path d="m19.07 4.93-1.41 1.41"/></svg>
+            </span>
+        </div>
+     </ol>
+     </div>
+    </header>
 
 
     <main><br>
@@ -98,5 +142,10 @@
             <span style="color: goldenrod; font-weight: bolder;">GESTNOTE</span> — Douala, Cameroun © create by NI PRO DEV
         </p>
     </footer>
+
+
+    <script src="JS/color_pages.js"></script>
+    <script src="JS/header.js"></script>
+    <script src="JS/index.js"></script>
 </body>
 </html>
