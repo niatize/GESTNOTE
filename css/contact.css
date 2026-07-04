@@ -29,9 +29,6 @@
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     justify-content: space-around;
 }
-body{
-    background-color: black;
-}
 input{
    
     height: 30px; 

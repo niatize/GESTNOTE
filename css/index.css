@@ -95,7 +95,7 @@ h1{
     animation: down 2s infinite;
 }
 .section{
-    background-color:rgba(0, 0, 0, 0.564);
+    background-color:red;
 }
 
 b{
