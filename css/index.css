@@ -95,7 +95,7 @@ h1{
     animation: down 2s infinite;
 }
 .section{
-    background-color:red;
+    background-color:rgba(0, 0, 0, 0.613);
 }
 
 b{
@@ -106,5 +106,6 @@ footer{
     color:white;
 }
 .acceuil{
-    background-color: gray;border-radius: 20px 20px;box-shadow: none;
+    background-color: gray;
+    border-radius: 20px 20px;box-shadow: none;
 }
