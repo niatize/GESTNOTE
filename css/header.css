@@ -2,16 +2,13 @@
     margin: 0;
     padding: 0;
 }
-body{background-color: #c5c3c36e;}
+.clair{background-color: #e8e7e76e;}
 header{
-    background-color: rgba(255, 255, 255, 0.589);
+    background-color: rgba(211, 208, 208, 0.302);
 }
 
-.sombre header,.sombre footer{
-    background-color: #1311119f;
-}
-.sombre body{
-    background-color: #1311119f;
+.sombre{
+    background-color: #131111c5;
 }
 .container{
     padding: 10px;
@@ -51,9 +48,15 @@ a:hover{
 }
 #logo_style{
     padding: 7px;
-    font-size: larger;
+    font-size: 3vw;
     color: goldenrod;
     font-weight: bolder;
+}
+.clair #logo_style{
+   color: goldenrod;
+}
+.sombre #logo_style{
+   color: gold;
 }
 .light_mode{
     width: 30px;
@@ -92,3 +95,9 @@ a:hover{
     #light_mode:hover{
         color: rgba(255, 255, 0, 0.664);
     }
+footer{
+    box-shadow: 0 0 3px 3px green;
+}
+a{
+    color: black;
+}

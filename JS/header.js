@@ -17,10 +17,8 @@ theme_clair.classList.toggle='loock'
 
 if(color==="black"){
     night_mode.style.display="none"
-
 }else{
     light_mode.style.display="none"
-    document.querySelector('body').classList.add('sombre')
 }
 
 
@@ -33,14 +31,15 @@ theme_sombre.addEventListener('click',(e)=>{
     theme_clair.style.display="block";
     theme_sombre.style.display='none';
     localStorage.setItem("couleur","black")
+    document.body.classList.add('sombre')
 })
 
         // pour quitter du thème sombre au theme clair
 theme_clair.addEventListener('click',(e)=>{
-    e.preventDefault;
     theme_sombre.style.display="block";
     theme_clair.style.display="none";
     localStorage.setItem("couleur","white")
+    document.body.classList.add('clair')
 })
 /// pour le thème de la page principale
 light_mode.style.position="absolute"
@@ -55,6 +54,7 @@ night_mode.addEventListener('click',()=>{
     localStorage.setItem("couleur","black")
     // location.reload(true)
     document.querySelector("html").classList.toggle("sombre")
+    night_mode.classList.add(' sombre')
 })
 
 
@@ -63,5 +63,7 @@ light_mode.addEventListener('click',()=>{
     light_mode.style.display="none"
     localStorage.setItem("couleur","white")
     // location.reload(true)
-    document.querySelector("html").classList.toggle("sombre")
+    document.querySelector("html").classList.toggle("sombre");
+    document.body.classList.add('clair')
+
 })
