@@ -1,7 +1,4 @@
-body{
-    background-image: linear-gradient(to left,wheat,whitesmoke,gray);
 
-}
 .first_content{
     display: flex;
     flex-direction: column;
