@@ -1,7 +1,116 @@
 #a{
     text-decoration: none;
-    color:  #33d17a;;
+    color:  greenyellow;
 }
 #a:hover{
     color: goldenrod;
+}
+fieldset{width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px 2px ;
+    background-color: #00000082;
+    box-shadow: 0 0 3px 3px #33d17a;
+    gap: 10px;
+    animation: shadow 1s linear infinite;
+}
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 3px 3px #33d17a;
+    }
+    50% {
+        box-shadow: 0 0 3px 3px gold;
+    }
+    100% {
+        box-shadow: 0 0 3px 3px goldenrod;
+    }
+}
+td{
+    padding: 20px;
+}
+legend{
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: none;
+    color: white;
+}
+.content_1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+svg{
+    background-color: #000000a8;
+    border-radius: 50%;
+    padding: 10px;
+    animation: shadow 2s infinite linear;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+[type="submit"]{
+    background-color: #33d17a;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 160px;
+}
+.sub{
+    animation: color 2s linear infinite;
+}
+@keyframes color {
+    0% {
+        background-image: linear-gradient(to left, #33d17a, #e5a50a);
+    }
+    50% {
+        background-image: linear-gradient(to left, #e5a50a, #33d17a);
+    }
+    100% {
+        background-image: linear-gradient(to left, #33d17a, #e5a50a);
+    }
+    0% {
+        background-image: linear-gradient(to left, #33d17a, #e5a50a);
+    }
+    50% {
+        background-image: linear-gradient(to left, #e5a50a, #33d17a);
+    }
+    100% {
+        background-image: linear-gradient(to left, #33d17a, #e5a50a);
+    }
+
+}
+.rotation{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    position: relative;
+    left: 270px;
+    top: -50px;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+    background-color: transparent;
+    border-top: 2px solid white;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.block{
+    display: block;
+}
+.none{
+    display: none;
+}
+.flex{
+    display: flex;
 }

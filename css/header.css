@@ -95,3 +95,21 @@ li:hover{
 footer{
     box-shadow: 0 0 3px 3px green;
 }
+svg{
+    background-color: #000000a8;
+    border-radius: 50%;
+    padding: 10px;
+    animation: shadow 2s infinite linear;
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 3px 3px #33d17a;
+    }
+    50% {
+        box-shadow: 0 0 3px 3px gold;
+    }
+    100% {
+        box-shadow: 0 0 3px 3px goldenrod;
+    }
+}

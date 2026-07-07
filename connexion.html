@@ -42,12 +42,13 @@
      </ol>
      </div>
     </header>
-
     <main>
+    <div class="content_1" id="contenue_1">
+
         <section id="connexion">
             <fieldset>
                 <legend align="center" style="border-radius: 50%;">
-                    <svg xmlns="http://www.w3.org/2000/svg" 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="svg"
                     width="44" height="44" viewBox="0 0 24 24"
                      fill="none" stroke="#33d17a" stroke-width="2" 
                      stroke-linecap="round" stroke-linejoin="round"
@@ -57,15 +58,15 @@
                       <circle cx="10" cy="7" r="4"/><circle cx="20" cy="19" r="2"/>
                     </svg>
                 </legend>
-                <form action="#">
+                <form action="#" id="connexion_form">
                     <table>
                         <tr>
                             <td><label for="user_name">Nom d'utilisateur:</label></td>
-                            <td><input type="text" id="user_name" name="user_name"></td>
+                            <td><input type="text" id="user_name" name="user_name" placeholder="nom utilisateur" required></td>
                         </tr>
                         <tr>
                             <td><label for="password">Mot de passe:</label></td>
-                            <td><input type="password" id="password" name="password"></td>
+                            <td><input type="password" id="password" name="password" placeholder="mot de passe" required></td>
                         </tr>
                         <tr>
                             <td><label for="loock_password">Voir le mot de passe</label></td>
@@ -73,43 +74,60 @@
                         </tr>
                         <tr>
                             <td colspan="2" align="center" >
-                                <a href="inscription.html" id="a">Créer un compte ?</a>
+                                Je n'ai pas de compte ? <a href="#" id="a">Créer un compte !</a>
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" align="center"><input type="submit" value="SE CONNECTER"></td>
+                            <td colspan="2" align="center"><input type="submit" id="sub" value="SE CONNECTER"></td>
                         </tr>
                     </table>
+                            <div class="rotate" id="rotate"></div>
                 </form>
             </fieldset>
         </section>
+    </div>
 
 
+    <div class="content_1" id="content_2">
 
-        <section id="cée_un_compte">
-            <div class="container">
-            <div class="content">
-                <fieldset>
-                    <legend align="center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#e5a50a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-face-icon lucide-scan-face"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
-                    </legend>
-                    <h1 align="center">QUI ESTES VOUS ?</h1><br><br>
-                    <form action="#" method="post">
-                        <input type="radio" id="professeur" name="personne_se_connectant" value="professeur"> <label for="professeur">Un professeur</label><br><br>
-                        <input type="radio" id="élève" name="personne_se_connectant" value="élève"> <label for="élève">Un élève</label><br><br>
-                        <input type="radio" id="Administration" name="personne_se_connectant" value="Administration"> <label for="Administration">Un membre de l'administration</label><br><br>
-                        <input type="submit" value="SUIVANT" >
-                    </form>
-                </fieldset>
+            <section id="cée_un_compte">
+                <div class="container">
+                <div class="content">
+                    <fieldset>
+                        <legend align="center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#e5a50a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-face-icon lucide-scan-face"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+                        </legend>
+                        <h1 align="center">QUI ESTES VOUS ?</h1><br><br>
+                        <form action="#" method="post">
+                            <table>
+                                <tr>
+                                    <td><input type="radio" id="professeur" name="personne_se_connectant" value="professeur"> </td>
+                                    <td><label for="professeur">Un professeur</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" id="élève" name="personne_se_connectant" value="élève"> </td>
+                                    <td><label for="élève">Un élève</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio" id="Administration" name="personne_se_connectant" value="Administration"> </td>
+                                    <td><label for="Administration">Un membre de l'administration</label></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" align="center"><input type="submit" id="sub_2" value="SUIVANT" ></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </fieldset>
+                </div>
             </div>
-        </div>
-        </section>
+            </section>
+
+    </div>
+
     </main>
 
 
-
-    <script src="JS/color_pages.js"></script>
-    <script src="JS/header.js"></script>
+    <script src="JS/connexion.js"></script>
     <script src="JS/script.js"></script>
 </body>
 </html>

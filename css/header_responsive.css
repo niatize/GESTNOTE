@@ -28,20 +28,20 @@ li{
 }
     .first_animation{
         display: none;
-        transition: .5s;
+        transition: .2s;
     }
     .second_animation{
         position: relative;
         top: 10px;
         transform: rotate(45deg);
-        transition: 0.5s;
+        transition: 0.2s;
         background-color: #dd0d0dc7;
     }
     .tird_animation{
         position: relative;
         top: -10px;
         transform: rotate(-45deg);
-        transition: 0.5s;
+        transition: 0.2s;
         background-color: #dd0d0dc7;
     }
     .them_mode{
@@ -53,7 +53,6 @@ li{
         border-bottom: 2px solid ;
     }
     a{
-        border-left: 2px solid rgba(0, 0, 255, 0.432);
         padding: 2px;
         border-radius: 5px 5px;
     }
@@ -67,8 +66,9 @@ li{
     h1{
         font-size: 15px;
     }
-    nav,ol .links{
+    nav{
         width: 100%;
         display: flex;
+        justify-content: center;
     }
 }
