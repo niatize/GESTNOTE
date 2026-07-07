@@ -11,8 +11,12 @@
     position: absolute;
     top: 60px;
     right: 0;
-    height: 100vh;
+    height: fit-content;
+    z-index: 1000;
     background-color: grey;
+
+    width: 100%;
+    transition: 1s;
 }
 ol{
     display: flex;
@@ -51,6 +55,7 @@ li{
     a{
         border-left: 2px solid rgba(0, 0, 255, 0.432);
         padding: 2px;
+        border-radius: 5px 5px;
     }
     .hidden{
         display: none;
@@ -61,5 +66,9 @@ li{
     }
     h1{
         font-size: 15px;
+    }
+    nav,ol .links{
+        width: 100%;
+        display: flex;
     }
 }

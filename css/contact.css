@@ -1,25 +1,11 @@
-.first_content{
+.container{
+    width: 100%;
+    height: 86vh;
     display: flex;
     justify-content: center;
-    width: 100%;
-    background-image: url(../image/1000000294.jpeg);
-    background-size: cover;
-    background-position: center;
-}
-.cont{
-    border: none;
-    border-top: 5px blue solid;
-    border-radius: 30px;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    color: white;
-}
-.contenu_1{
-    border: none;
-    border-left: 5px blue solid;
-    border-radius: 30px;
-    padding: 20px;
-
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }
 input{
    
@@ -45,6 +31,9 @@ input[type="submit"]:hover{
 fieldset{
     border: none;
     border-left: 5px blue solid;
+    border-right: 5px blue solid;
+    background-color: rgba(0, 0, 0, 0.136);
+    backdrop-filter: blur(200px);
     border-radius: 30px;
     width: 35%;
     padding: 20px;
@@ -54,9 +43,6 @@ input:focus,textarea:focus{
     border-color: gold;
     transform: scale(1.05);
     transition: 0.5s
-}
-.contenue_2{
-    width: 100%;
 }
 .contenus{
     display: flex;
@@ -73,12 +59,15 @@ input:focus,textarea:focus{
     justify-content: center;
     align-items: center;
 }
-#form{
-    background-color: rgba(255, 255, 255, 0.532);
-}
 legend{
-    color: goldenrod;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(100px);
+    font-family: Helvetica;
+    font-size: 17px;
+    font-weight: bolder;
     padding: 5px;
     border-radius: 20px 5px;
+}
+footer{
+    font-size: 15px;
+    color: white;
 }

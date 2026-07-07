@@ -1,16 +1,16 @@
 *{
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
+    --header_footer_background-color: #000000b4;
 }
-.clair{background-color: #e8e7e76e;}
-header{
-    background-color: rgba(211, 208, 208, 0.302);
+body{
+    background-image: linear-gradient(to left, rgba(0, 0, 255, 0.18), rgba(128, 128, 128, 0.597),rgba(242, 242, 4, 0.098));
 }
-
-.sombre{
-    background-color: #131111c5;
+header,footer{
+    background-color: var(--header_footer_background-color);
 }
-.container{
+.header_container{
     padding: 10px;
     height: fit-content;
     width: 99%;
@@ -28,7 +28,7 @@ ol{
 }
 a{
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.774);
+    color: white;
 }
 li{
     list-style: none;
@@ -42,9 +42,6 @@ li:hover{
     transform: scale(1.1);
     transition: 0.5s;
     box-shadow: 0 0 7px 2px gold;
-}
-a:hover{
-    color: black;
 }
 #logo_style{
     padding: 7px;
@@ -97,7 +94,4 @@ a:hover{
     }
 footer{
     box-shadow: 0 0 3px 3px green;
-}
-a{
-    color: black;
 }
