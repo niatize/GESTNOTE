@@ -21,6 +21,7 @@
                     stroke-linejoin="round" 
                     class="lucide lucide-graduation-cap h-7 w-7 text-primary-foreground">
                 <path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                
                 </path>
                         <path d="M22 10v6"></path>
                         <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
@@ -81,7 +82,7 @@
     </header>
 
 
-    <main><br>
+    <main>
         <hr><br>
         <div class="first_content">
           <div class="cont">
@@ -91,13 +92,25 @@
             Besoin d'aide ? <br>
             besoin d'une formation ?<br>
             <br><br>
-            <b style="color: goldenrod;">Contactez-nous !</b>
+            <b><a href="#contact" style="color: goldenrod;">Contactez-nous !</a></b>
           </div><br>
         </div><br><br>
 <hr>
-        <div class="second_content">
-            <fieldset>
-                <legend> <b style="color: goldenrod; ">Pour discuter ?</b></legend>
+
+                <section id="contact">
+                <fieldset id="form">
+                    <legend><b style="color: goldenrod; ">DECLAREZ NOUS VOTRE PROBLEME !</b></legend>
+                   <form action="#"><br>
+                    <input type="text" placeholder="Nom complet" required><br><br>
+                    <input type="email" placeholder="E-mail" required><br><br>
+                    <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{9}" title="Un numéro Camerounais à 9 chiffre" required><br><br>
+                    <textarea name="" id="" cols="50px"rows="5px" placeholder="Décrivez nous votre problème" required></textarea><br><br>
+                    <input type="submit"><br><br>
+                   </form>
+                </fieldset><br>
+                </section>
+<div class="contenus">
+
                 <div class="content"> 
               <img src="image/telephone-number-svgrepo-com.svg" alt="" style="width: 40px;
               height: 50px;">  675 40 44 03 <br>
@@ -116,22 +129,11 @@
             </div>
             <div class="content">
                 <img src="image/email-download-svgrepo-com.svg" alt=""style="width: 40px;
-              height: 50px; border-radius: 20px;">niatizepro@gmail.com
+              height: 50px; border-radius: 20px;"><a href="mailto:niatizepro@gmail.com">niatizepro@gmail.com</a>
             </div>
-            </fieldset>
-            <div class="contenue_2">
-                <fieldset>
-                    <legend><b style="color: goldenrod; ">DECLAREZ NOUS VOTRE PROBLEME !</b></legend>
-                   <form action="#"><br>
-                    <input type="text" placeholder="Nom complet" required><br><br>
-                    <input type="email" placeholder="E-mail" required><br><br>
-                    <input type="tel" placeholder="Numéro de téléphone" pattern="[0-9]{9}" title="Un numéro Camerounais à 9 chiffre" required><br><br>
-                    <textarea name="" id="" cols="50px"rows="5px" placeholder="Décrivez nous votre problème" required></textarea><br><br>
-                    <input type="submit"><br><br>
-                   </form>
-                </fieldset>
-            </div>
-        </div>
+
+</div>
+
         <br>
     </main>
 

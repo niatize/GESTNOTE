@@ -38,7 +38,7 @@ li{
     transition: 0.5s;
 }
 li:hover{
-    background-color: rgba(128, 128, 128, 0.63);
+    background-color: rgba(234, 167, 33, 0.63);
     transform: scale(1.1);
     transition: 0.5s;
     box-shadow: 0 0 7px 2px gold;

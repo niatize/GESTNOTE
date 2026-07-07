@@ -6,6 +6,8 @@
     <title>Connexion</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/header_responsive.css">
+    <link rel="stylesheet" href="css/connexion.css">
+    <link rel="stylesheet" href="css/connexion_responsive.css">
 </head>
 <body>
     <header>
@@ -79,7 +81,49 @@
     </header>
 
     <main>
-        <section id="section_1">
+        <section id="connexion">
+            <fieldset>
+                <legend align="center" style="border-radius: 50%;">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                    width="44" height="44" viewBox="0 0 24 24"
+                     fill="none" stroke="#33d17a" stroke-width="2" 
+                     stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-user-key-icon lucide-user-key">
+                      <path d="M20 11v6"/><path d="M20 13h2"/>
+                      <path d="M3 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 2.072.578"/>
+                      <circle cx="10" cy="7" r="4"/><circle cx="20" cy="19" r="2"/>
+                    </svg>
+                </legend>
+                <form action="#">
+                    <table>
+                        <tr>
+                            <td><label for="user_name">Nom d'utilisateur:</label></td>
+                            <td><input type="text" id="user_name" name="user_name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Mot de passe:</label></td>
+                            <td><input type="password" id="password" name="password"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="loock_password">Voir le mot de passe</label></td>
+                            <td><input type="checkbox" id="loock_password" name="loock_password"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center" >
+                                <a href="inscription.html" id="a">Créer un compte ?</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"><input type="submit" value="SE CONNECTER"></td>
+                        </tr>
+                    </table>
+                </form>
+            </fieldset>
+        </section>
+
+
+
+        <section id="cée_un_compte">
             <div class="container">
             <div class="content">
                 <fieldset>
@@ -92,24 +136,6 @@
                         <input type="radio" id="élève" name="personne_se_connectant" value="élève"> <label for="élève">Un élève</label><br><br>
                         <input type="radio" id="Administration" name="personne_se_connectant" value="Administration"> <label for="Administration">Un membre de l'administration</label><br><br>
                         <input type="submit" value="SUIVANT" >
-                    </form>
-                </fieldset>
-            </div>
-        </div>
-        </section>
-        <section id="section_2">
-             <div class="container">
-            <div class="content">
-                <fieldset>
-                    <legend align="center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#e5a50a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-face-icon lucide-scan-face"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
-                    </legend>
-                    <h1 align="center">VOUS ESTES DE QUEL ETABLISSEMENT ?</h1><br><br>
-                    <form action="#" method="post">
-                        <input type="radio" id="rapha" name="rapha" value="rapha"> <label for="rapha">RAPHA</label><br><br>
-                        <input type="radio" id="cefti" name="cefti" value="cefti"> <label for="cefti">CEFTI</label><br><br>
-                        <input type="radio" id="Administration" name="personne_se_connectant" value="Administration"> <label for="autres"><a href="autres.html" style="border-bottom: 1px solid blue;">Autres...</a></label><br><br>
-                        <input type="submit" value="SUIVANT" id="send_1">
                     </form>
                 </fieldset>
             </div>

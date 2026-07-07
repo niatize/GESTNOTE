@@ -49,8 +49,8 @@ light_mode.style.right="10px"
 
 
 night_mode.addEventListener('click',()=>{
-    light_mode.style.display="block"
     night_mode.style.display="none"
+    light_mode.style.display="block"
     localStorage.setItem("couleur","black")
     // location.reload(true)
     document.querySelector("html").classList.toggle("sombre")

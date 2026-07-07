@@ -1,4 +1,4 @@
-@media (max-width:600px) {
+@media (max-width:800px) {
     
     .menu_burger{
     display: flex;
@@ -24,6 +24,7 @@ li{
 }
     .first_animation{
         display: none;
+        transition: .5s;
     }
     .second_animation{
         position: relative;
