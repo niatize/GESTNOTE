@@ -38,13 +38,3 @@ no_account.addEventListener('click',(e)=>{
         content_2.classList.add('flex')
     }, 1000);
 })
-
-let back_1 = document.getElementById('back_1')
-back_1.addEventListener('click',(e)=>{
-    back_1.classList.add('bub_color')
-    submit.style="none"
-    setTimeout(()=>{
-    content_1.classList.add('flex');
-    content_2.classList.add('none')
-    },100);
-})
