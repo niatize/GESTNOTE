@@ -5,7 +5,9 @@
     --header_footer_background-color: #000000b4;
 }
 body{
-    background-image: linear-gradient(to left, rgba(0, 0, 255, 0.18), rgba(128, 128, 128, 0.597),rgba(242, 242, 4, 0.098));
+    background-color: #000000c9;
+    color: white;
+    font-family: helvetica;
 }
 header,footer{
     background-color: var(--header_footer_background-color);
@@ -49,16 +51,6 @@ li:hover{
     color: goldenrod;
     font-weight: bolder;
 }
-.clair #logo_style{
-   color: goldenrod;
-}
-.sombre #logo_style{
-   color: gold;
-}
-.light_mode{
-    width: 30px;
-    
-}
 
 .menu_burger{
     position: relative;
@@ -73,7 +65,7 @@ li:hover{
     align-items: center;
     width: 50px;
     height: 5px;
-    background-color: black;
+    background-color: #ffffffa7;
 }
     .second_animation{
         transform: rotate(0deg);
@@ -94,9 +86,11 @@ li:hover{
     }
 footer{
     box-shadow: 0 0 3px 3px green;
+    padding: 05px;
+    color: white;
 }
 svg{
-    background-color: #000000a8;
+    background-color: #000000;
     border-radius: 50%;
     padding: 10px;
     animation: shadow 2s infinite linear;

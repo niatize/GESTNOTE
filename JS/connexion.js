@@ -16,11 +16,11 @@
     // instruction pout allez a la page après inscription
 connexion_form.addEventListener('submit',(e)=>{
     e.preventDefault
-    submit.classList.add(`sub_color`)
-    rotate.classList.add('rotation')
+    submit.classList.toggle(`sub_color`)
+    rotate.classList.toggle('rotation')
     setTimeout(() => {
         window.location.href="filière.html"
-    }, 100);
+    }, 1000);
 })
 
 
@@ -31,10 +31,18 @@ connexion_form.addEventListener('submit',(e)=>{
     
 no_account.addEventListener('click',(e)=>{
     e.preventDefault
-    submit.classList.add(`sub_color`)
-    rotate.classList.add('rotation')
+    submit.classList.toggle(`sub_color`)
+    rotate.classList.toggle('rotation')
     setTimeout(() => {
+    submit.classList.add('not_sub_color')
+    rotate.style.display='none'
         content_1.classList.add('none')
         content_2.classList.add('flex')
-    }, 1000);
+    }, 300);
+})
+
+back_1.addEventListener('click',(e)=>{
+    content_2.classList.add('back_none')
+    content_1.classList.add('flex')
+    location.reload(false)
 })
