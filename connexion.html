@@ -73,7 +73,7 @@
                             <td><input type="checkbox" id="loock_password" name="loock_password"></td>
                         </tr>
                         <tr>
-                            <td colspan="2" align="center" >
+                            <td colspan="2">
                                 Je n'ai pas de compte ? <a href="#" id="a">Créer un compte !</a>
                             </td>
                         </tr>
@@ -98,24 +98,27 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#e5a50a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-face-icon lucide-scan-face"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
                         </legend>
                         <h1 align="center">QUI ESTES VOUS ?</h1><br><br>
-                        <form action="#" method="post">
+                        <form action="#" method="post" id="connexion_form_2">
                             <table>
                                 <tr>
-                                    <td><input type="radio" id="professeur" name="personne_se_connectant" value="professeur"> </td>
+                                    <td><input type="radio" id="professeur" name="personne_se_connectant" value="professeur" required> </td>
                                     <td><label for="professeur">Un professeur</label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" id="élève" name="personne_se_connectant" value="élève"> </td>
+                                    <td><input type="radio" id="élève" name="personne_se_connectant" value="élève" required> </td>
                                     <td><label for="élève">Un élève</label></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" id="Administration" name="personne_se_connectant" value="Administration"> </td>
-                                    <td><label for="Administration">Un membre de l'administration</label></td>
+                                    <td><input type="radio" id="Administration" name="personne_se_connectant" value="Administration" required> </td>
+                                    <td><label for="Administration">Un membre de <br> l'administration</label></td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" align="center"><input type="submit" id="sub_2" value="SUIVANT" ></td>
+                                    <td><input type="button" id="back_1" value="RETOUR"></td>
+                                    <td ><input type="submit" id="sub_2" value="SUIVANT" ></td>
                                 </tr>
                             </table>
+
+                            <div class="rotate" id="rotate_2"></div>
                         </form>
                     </fieldset>
                 </div>
@@ -129,5 +132,7 @@
 
     <script src="JS/connexion.js"></script>
     <script src="JS/script.js"></script>
+    <script src="JS/password.js"></script>
+    <script src="JS/inscription.js"></script>
 </body>
 </html>

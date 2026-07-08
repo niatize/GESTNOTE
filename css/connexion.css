@@ -5,7 +5,9 @@
 #a:hover{
     color: goldenrod;
 }
-fieldset{width: 100%;
+fieldset{
+    color: white;
+    width: 100%;
     padding: 10px;
     border: none;
     border-radius: 20px 2px ;
@@ -49,19 +51,31 @@ svg{
     padding: 10px;
     animation: shadow 2s infinite linear;
 }
-input{
+input,button{
     padding: 10px;
     border-radius: 5px;
     border: none;
+    transform: scale(1);
+    transition: .5s;
 }
-[type="submit"]{
+[type="submit"]:hover,#back_1:hover{
+    transform: scale(1.1);
+    transition: .5s;
+    box-shadow: 0 0 2px 2px ;
+}
+[type="submit"],#back_1{
     background-color: #33d17a;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    width: 160px;
+    width: 175px;
 }
-.sub{
+table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub_color{
     animation: color 2s linear infinite;
 }
 @keyframes color {
@@ -85,12 +99,25 @@ input{
     }
 
 }
+.rotate_2{
+
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    position: relative;
+    left: 220px;
+    top: -50px;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+    background-color: transparent;
+    border-top: 2px solid white;
+}
 .rotation{
     width: 20px;
     height: 20px;
     background-color: black;
     position: relative;
-    left: 270px;
+    left: 290px;
     top: -50px;
     border-radius: 50%;
     animation: rotate 1s linear infinite;
@@ -104,9 +131,6 @@ input{
     to {
         transform: rotate(360deg);
     }
-}
-.block{
-    display: block;
 }
 .none{
     display: none;
