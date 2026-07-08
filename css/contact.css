@@ -13,6 +13,7 @@ input{
     height: 30px; 
 }
 input,textarea{
+    background-color: #ffffff72;
     width: 100%;
     border: none;
     padding: 5px;
