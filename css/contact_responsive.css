@@ -1,8 +1,6 @@
 @media (max-width:900px) {
 input,textarea{
     width: 100%;
-    color: #ffffff;
-    background-color: grey;
 }
 .container{
     width: 100%;

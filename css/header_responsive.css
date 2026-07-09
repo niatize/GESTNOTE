@@ -7,13 +7,14 @@
 }
 
 .nav_links{
+    padding: 10px;
     display: none;
     position: absolute;
-    top: 80px;
+    top: 60px;
     right: 0;
     height: fit-content;
     z-index: 1000;
-    background-color: var(--header_footer_background-color);
+    background-color: black;
     width: 100%;
     transition: 1s;
 }
@@ -74,6 +75,6 @@ li{
         color: white;
     }
     #logo_style{
-        font-size: 40px;
+        font-size: 30px;
     }
 }
