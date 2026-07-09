@@ -2,6 +2,7 @@
 .container{
     height: 60vh;
     display: grid;
+    width: 100%;
     justify-content: center;
     grid-template-columns:repeat( auto-fit,minmax(250px,1fr));
 }
@@ -11,10 +12,6 @@ img{
 }
 
 .content{
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
 }
-}
+} 

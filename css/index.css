@@ -15,9 +15,9 @@ img{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    height: 50vh;
-    padding: 10px;
+    width: 50%;
+    height: 40vh;
+    padding: 5px;
 }
 .content{
     width: 50%;
@@ -94,5 +94,5 @@ button:hover{
     #but_1{
         position: relative;
         right: 50px;
-    }
+    } 
 }

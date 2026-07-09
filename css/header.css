@@ -38,6 +38,8 @@ li{
     border-radius: 10px 5px;
     transform: scale(1);
     transition: 0.5s;
+    width: fit-content;
+    height: fit-content;
 }
 li:hover{
     background-color: rgba(234, 167, 33, 0.63);
