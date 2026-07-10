@@ -19,7 +19,7 @@ connexion_form.addEventListener('submit',(e)=>{
     submit.classList.toggle(`sub_color`)
     rotate.classList.toggle('rotation')
     setTimeout(() => {
-        window.location.href="filière.html"
+        window.location.href="verification_connexion.html"
     }, 1000);
 })
 

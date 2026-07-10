@@ -1,3 +1,4 @@
+
 #a{
     text-decoration: none;
     color:  greenyellow;
@@ -13,17 +14,6 @@ fieldset{
     background-color: #00000082;
     box-shadow: 0 0 3px 3px #33d17a;
     animation: shadow 10s linear infinite;
-}
-@keyframes shadow {
-    0% {
-        box-shadow: 0 0 3px 3px #33d17a;
-    }
-    50% {
-        box-shadow: 0 0 3px 3px gold;
-    }
-    100% {
-        box-shadow: 0 0 3px 3px goldenrod;
-    }
 }
 td{
     padding: 20px;

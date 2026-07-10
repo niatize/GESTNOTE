@@ -15,8 +15,8 @@ td{
     height: 20px;
     background-color: black;
     position: relative;
-    left: 240px;
-    top: -50px;
+    left: 225px;
+    top: -40px;
     border-radius: 50%;
     animation: rotate 1s linear infinite;
     background-color: transparent;
