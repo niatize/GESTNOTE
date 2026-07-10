@@ -20,7 +20,7 @@ connexion_form.addEventListener('submit',(e)=>{
     rotate.classList.toggle('rotation')
     setTimeout(() => {
         window.location.href="verification_connexion.html"
-    }, 1000);
+    }, 500);
 })
 
 
