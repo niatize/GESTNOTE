@@ -1,5 +1,5 @@
 const écriture = document.getElementById('écriture');
-const text = "Cliquer sur les réseaux sociaux si dessous pour nous contacter.";
+const text = "Cliquer sur les réseaux sociaux ci dessous pour nous contacter.";
 const tab = [...text]
 let i = 0;
 function ecrire(){
@@ -7,7 +7,7 @@ function ecrire(){
         écriture.innerHTML = '';
         i = 0;
         setTimeout(ecrire,1000)
-        return
+        return i
     }
     if(i <= tab.length-1){
         let texte = tab[i];
@@ -16,7 +16,7 @@ function ecrire(){
         }else{
             écriture.textContent += texte 
         }
-        setTimeout(ecrire,150)
+        setTimeout(ecrire,200)
         i++;
     }
 }

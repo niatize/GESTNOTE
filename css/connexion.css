@@ -7,14 +7,14 @@
 }
 fieldset{
     color: white;
-    width: 100%;
+    width: 1px;
     padding: 10px;
     border: none;
     border-radius: 20px 2px ;
     background-color: #00000082;
     box-shadow: 0 0 3px 3px #33d17a;
     gap: 10px;
-    animation: shadow 1s linear infinite;
+    animation: shadow 10s linear infinite;
 }
 @keyframes shadow {
     0% {
@@ -65,10 +65,8 @@ input,button{
     width: 175px;
     border-radius: 0px 50px 80px 20px ;
 }
-table{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+table,td{
+    width: 10px;
 }
 .sub_color{
     animation: color 2s linear infinite;
@@ -115,7 +113,7 @@ table{
     height: 20px;
     background-color: black;
     position: relative;
-    left: 290px;
+    left: 250px;
     top: -50px;
     border-radius: 50%;
     animation: rotate 1s linear infinite;

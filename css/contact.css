@@ -36,7 +36,6 @@ fieldset{
     border-left: 5px  brown solid;
     border-right: 5px brown solid;
     background-color: #00000082;
-    backdrop-filter: blur(200px);
     border-radius: 30px;
     width: 35%;
     padding: 20px;
@@ -64,7 +63,8 @@ input:focus,textarea:focus{
     justify-content: center;
     align-items: center;
 }
-legend{background-color: #33d17a9d;
+legend{
+    background-color: #33d17a9d;
     font-family: Helvetica;
     font-size: 17px;
     font-weight: bolder;

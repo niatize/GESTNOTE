@@ -1,10 +1,12 @@
 @media (max-width:600px) {
 .container{
     height: 100vh;
-    display: grid;
+    display: inline-grid;
+    
     width: 100%;
-    justify-content: center;
     grid-template-columns:repeat( auto-fit,minmax(250px,1fr));
+    justify-self: center;
+    align-self: center;
 }
 img{
     width: 100%;
@@ -13,6 +15,12 @@ img{
 
 .content{
     width: 100%;
+}
+#content_1{
+    grid-row: 1;
+}
+#content_2{
+    grid-row: 2;
 }
 .content_2{
     width: 80%;

@@ -21,10 +21,4 @@ input,textarea{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 }
-input[type="submit"]{
-    width: 50%;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-}
 }

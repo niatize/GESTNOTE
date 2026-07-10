@@ -1,5 +1,20 @@
 @media (max-width:600px) {
-    fieldset{
-        
-    }
+.content_1{
+    height: 89vh;
+}
+td{
+    text-align: center;
+}
+.rotation{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    position: relative;
+    left: 240px;
+    top: -50px;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+    background-color: transparent;
+    border-top: 2px solid white;
+}
 }
