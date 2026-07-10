@@ -81,11 +81,7 @@ li{
         width: 99%;
     }
     footer{
-    padding: 10px;
     color: white;
-    width: 90%;
+    width: 95%;
 }
-}
-@media (max-whith:900px) {
-    
 }
