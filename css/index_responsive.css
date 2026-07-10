@@ -1,6 +1,6 @@
 @media (max-width:600px) {
 .container{
-    height: 60vh;
+    height: 100vh;
     display: grid;
     width: 100%;
     justify-content: center;
