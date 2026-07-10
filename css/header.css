@@ -17,12 +17,11 @@ header,footer{
 .header_container{
     padding: 10px;
     height: fit-content;
-    width: 99%;
+    width: 97%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 3px solid black;
-}
+} 
 .nav_links{
     width: 50%;
 }

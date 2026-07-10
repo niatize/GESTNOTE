@@ -5,15 +5,13 @@
 #a:hover{
     color: goldenrod;
 }
+
 fieldset{
     color: white;
-    width: 1px;
-    padding: 10px;
     border: none;
     border-radius: 20px 2px ;
     background-color: #00000082;
     box-shadow: 0 0 3px 3px #33d17a;
-    gap: 10px;
     animation: shadow 10s linear infinite;
 }
 @keyframes shadow {
@@ -31,6 +29,7 @@ td{
     padding: 20px;
 }
 legend{
+    width: fit-content;
     border-radius: 50%;
     font-size: 20px;
     padding: 10px;
@@ -38,7 +37,7 @@ legend{
     background-color: none;
     color: white;
 }
-.content_1{
+.content_1{ 
     width: 100%;
     height: 85vh;
     display: flex;
@@ -64,9 +63,6 @@ input,button{
     cursor: pointer;
     width: 175px;
     border-radius: 0px 50px 80px 20px ;
-}
-table,td{
-    width: 10px;
 }
 .sub_color{
     animation: color 2s linear infinite;
@@ -94,19 +90,6 @@ table,td{
         background-image: linear-gradient(to left, #33d17a, #e5a50a);
     }
 
-}
-.rotate_2{
-
-    width: 20px;
-    height: 20px;
-    background-color: black;
-    position: relative;
-    left: 220px;
-    top: -50px;
-    border-radius: 50%;
-    animation: rotate 1s linear infinite;
-    background-color: transparent;
-    border-top: 2px solid white;
 }
 .rotation{
     width: 20px;
@@ -139,4 +122,7 @@ table,td{
 }
 footer{
     padding: 30px;
+}
+#connexion_form{
+    width: 25%;
 }

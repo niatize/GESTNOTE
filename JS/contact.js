@@ -1,6 +1,6 @@
 const écriture = document.getElementById('écriture');
 const text = "Cliquer sur les réseaux sociaux ci dessous pour nous contacter.";
-const tab = [...text]
+const tab = Array.from(text)
 let i = 0;
 function ecrire(){
     if(i >= tab.length){
