@@ -1,6 +1,6 @@
 .container{
     width: 100%;
-    height: 80vh;
+    height: 77.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +72,7 @@ legend{background-color: #33d17a9d;
     border-radius: 20px 5px;
 }
 footer{
-    padding: 40px;
+    padding: 20px;
     font-size: 15px;
     color: white;
 }
