@@ -1,43 +1,5 @@
-@media (max-width:900px) {
-input[type="submit"],#back_1{
-    background-color: #007bff;
-}
-.rotate_2{
-
-    width: 20px;
-    height: 20px;
-    background-color: black;
-    position: relative;
-    left: 220px;
-    top: -50px;
-    border-radius: 50%;
-    animation: rotate 1s linear infinite;
-    background-color: transparent;
-    border-top: 2px solid white;
-}
-.rotation{
-    width: 20px;
-    height: 20px;
-    background-color: black;
-    position: relative;
-    left: 260px;
-    top: -50px;
-    border-radius: 50%;
-    animation: rotate 1s linear infinite;
-    background-color: transparent;
-    border-top: 2px solid white;
-}
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
+@media (max-width:600px) {
+    fieldset{
+        
     }
-    to {
-        transform: rotate(360deg);
-    }
-}
-fieldset,#fieldset{
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-}
 }
