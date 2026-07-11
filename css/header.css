@@ -1,21 +1,22 @@
 *{
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
     --header_footer_background-color: #000000b4;
 }
 body{
     background-color: #000000c9;
     color: white;
     font-family: helvetica;
+    overflow: none;
 }
 header,footer{
     border: none;
     background-color: var(--header_footer_background-color);
-    width: 100%;
 }
 .header_container{
     padding: 10px;
     height: fit-content;
-    width: 97%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -103,4 +104,7 @@ footer{
     .log{
         width:30px;
     }
+}
+.body{
+    width: 100%;
 }
