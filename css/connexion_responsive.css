@@ -1,11 +1,12 @@
+
 @media (max-width:900px) {
     .content_1{
-    height: 83vh;
+    height: 85vh;
 }
 }
 @media (max-width:500px) {
 .content_1{
-    height: 80vh;
+    height: 79vh;
 }
 td{
     text-align: center;
@@ -24,9 +25,41 @@ td{
 }
 table{
     padding: 0;
-    width: 100px;
+    width: 90%;
+    box-sizing: border-box;
 }
 td{
     padding: 10px;
+    box-sizing: border-box;
 }
+}
+@media (max-width:395px) {
+    .content_1{
+    height: 69vh;
+}
+td{
+    padding: 1px;
+    box-sizing: border-box;
+}
+}
+@media (max-width:410px) {
+.content_1{
+    height: 78.3vh;
+}
+td{
+    padding: 3px;
+    box-sizing: border-box;
+}
+}
+@media (max-width:400px) {
+.content_1{
+    height: 71.5vh;
+}
+td{
+    padding: 3px;
+    box-sizing: border-box;
+}
+}
+*{
+    outline: 1px solid red;
 }

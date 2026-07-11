@@ -39,6 +39,7 @@ fieldset{
     border-radius: 30px;
     width: 35%;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 input:focus,textarea:focus{

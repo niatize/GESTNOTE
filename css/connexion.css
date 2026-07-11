@@ -14,9 +14,11 @@ fieldset{
     background-color: #00000082;
     box-shadow: 0 0 3px 3px #33d17a;
     animation: shadow 10s linear infinite;
+    box-sizing: border-box;
 }
 td{
     padding: 20px;
+    box-sizing: border-box;
 }
 legend{
     width: fit-content;
