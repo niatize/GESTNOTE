@@ -55,6 +55,7 @@ input:focus,textarea:focus{
     flex-wrap: wrap;
     padding: 10px;
     color: white;
+    box-sizing: border-box;
 }
 #contact{
     width: 100%;
@@ -70,11 +71,13 @@ legend{
     font-weight: bolder;
     padding: 5px;
     border-radius: 20px 5px;
+    box-sizing: border-box;
 }
 footer{
     padding: 20px;
     font-size: 15px;
     color: white;
+    box-sizing: border-box;
 }
 .email:hover{
     color: gold;
