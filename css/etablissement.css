@@ -1,0 +1,64 @@
+body{
+    overflow-y: hidden;
+}
+main{
+    height: 80vh;
+    overflow-y: scroll;
+}
+.etablissement{
+    background-color: #8080804d;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.etabbutton{
+    position: absolute;
+    bottom: 10vh;
+    right: 1vw;
+    font-size: larger;
+    font-weight:900;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #00fa9a;
+    color: black;
+    border: none;
+    transition: .5s;
+    padding: 10px;
+}
+.etablissement_desct{
+    width: fit-content;
+}
+.etablissement_logo{
+    width: 20vw;
+}
+.etabbutton:hover{
+    box-shadow: 0 0 3px 3px ;
+    transform: scale(1.05);
+    transition: .5s;
+    cursor: pointer;
+}
+.color 
+.etabbutton:hover{
+    box-shadow: 0 0 3px 3px white;
+}
+img{
+    width: 50px;
+}
+[type="submit"]{
+    width: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: bolder;
+    background-color: #00fa9a;
+    box-sizing: border-box;
+}
+.color [type="submit"]{
+    color: black;
+}
+h1{
+    padding: 20px;
+    background-color: rgb(3, 136, 85);
+    text-align: center;
+}

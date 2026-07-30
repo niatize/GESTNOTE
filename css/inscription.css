@@ -1,48 +1,58 @@
-.container{
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body{
+    overflow: hidden;
 }
-#inscription{
-    background-color: gray;
-    border-radius: 10px ;
-    box-shadow: none;
-}
-#inscription:hover{
-    border-radius: 10px 5px;
-}
-label{
+h1{
     padding: 20px;
+    background-color: rgb(3, 136, 85);
+    text-align: center;
 }
-label:hover{
-    color: gold;
-    cursor: pointer;
+.parent{
+    width: 100%;
+    height: 66.8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.div_2,.div_3{
+    display: none;
 }
 fieldset{
-    padding: 30px;
-    border-color: gold;
-    transform: scale(1);
-    transition: 1s;
+    padding: 29px;
 }
-fieldset:hover{
+
+fieldset{
+    color: white;
+    border: none;
+    border-radius: 20px 2px ;
+    background-color: #00000082;
+    box-shadow: 0 0 3px 3px #33d17a;
+    animation: shadow 10s linear infinite;
+    box-sizing: border-box;
+legend{
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: none;
+    background-color: #808080fc;
+    box-shadow: 0 0 3px 3px #33d17a;
+    color: white;
+}
+}
+select{
+    padding: 10px;
+    width: 100%;
+}
+.retour{
+    background-color: #33d17a;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 175px;
+    border-radius: 0px 50px 80px 20px ;
+}
+.retour:hover{
     transform: scale(1.1);
-    transition: 1s;
-    box-shadow: inset 0 0 4px 5px rgba(179, 156, 27, 0.537);
-}
-input[type="submit"]{
-   display: flex;
-   margin-left: auto;
-   padding: 5px;
-   background-color: rgb(0, 119, 255);
-   color: white;
-   border-radius: 10px 5px;
-   box-shadow: none;
-   transform: scale(1);
-    transition: 1s;
-}
-input[type="submit"]:hover{
-    transform: scale(1.2);
-    transition: 0.5s;
+    transition: .5s;
+    box-shadow: 0 0 2px 2px ;
 }

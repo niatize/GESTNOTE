@@ -1,0 +1,12 @@
+@media (max-width:500px) {
+    
+[type="submit"]{
+    position: relative;
+    left: -9vw;
+    font-size: 4vw;
+    padding: 2px;
+}
+h1{
+    font-size: 3vw;
+}
+}

@@ -1,28 +1,79 @@
-.input_pattern{
-    padding: 10px;
-    width: 20%;
-    height: 20%;
-    text-align: center;
+.verif_container{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    align-self: center;
+    width: 100%;
+    height: 80vh;
 }
-form{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
-    row-gap: 30px;
-    align-items: center;
-    position: relative;
-    left: 30px;
+input[type="text"]{
+    width: 70%;
+}
+.submit{
+    display: flex;
+    justify-content: space-around;
 }
 fieldset{
-    padding: 20px;
-    width: 26%;
-    background-color: #00000082 ;
+    width: 50%;
 }
-.verif_container{
+table{
     width: 100%;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 30px;
+    input{
+        padding: 5px;
+    }
+}
+td{
+    padding: 10px;
+}
+input{
+    border-radius: 6px;
+}
+input,button{
+    font-size: larger;
+    text-align: left;
+    padding: 5px;
+}
+[type="submit"],button{
+    border: none;
+    border-radius: 10px 0px 10px 0px;
+    background-color: #09ff9d;
+    transition: .5s;
+}
+[type="submit"]:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 2px 2px white;
+    transition: .5s;
+}
+button{
+    color: black;
+}
+fieldset{
+    color: white;
+    border: none;
+    border-radius: 20px 2px ;
+    background-color: #00000082;
+    box-shadow: 0 0 3px 3px #33d17a;
+    animation: shadow 10s linear infinite;
+    box-sizing: border-box;
+}
+
+legend{
+    width: 10vw;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: none;
+    background-color: #808080cf;
+    color: white;
+}
+.image{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 100%;
+    box-shadow: 0 0 3px 3px #33d17a;
+}
+.color legend{
+    background-color: transparent;
 }

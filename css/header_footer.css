@@ -1,0 +1,152 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    --header_and_footer:#fafafa;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-align: center;
+}
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.header_container{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--header_and_footer);
+    box-sizing: border-box;
+    box-shadow: 0 0 3Px 1px;
+}
+.logo{
+    width: 5vw;
+    background: none;
+}
+#logo_2{
+    display: none;
+}
+#logo_1{
+    display: block;
+}
+.color #logo_1{
+    display: none;
+}
+.color #logo_2{
+    display: block;
+}
+#header_box_1{
+    width: 1%;
+    background-color: transparent;
+    width: fit-content;
+    display: inline-flex;
+    justify-content: left;
+    align-items: center;
+}
+.header_box_2{
+    width: 40%;
+}
+ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: transparent;
+}
+li{
+    list-style: none;
+    background-color: transparent;
+}
+a{
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+}
+a:hover{
+    background-color: #80808086;
+    border-radius: 10px 5px;
+    padding: 10px;
+    transform: scale(1.1);
+    transition: .5s;
+    box-sizing: border-box;
+box-shadow: 0 0 2px 2px gold;
+}
+footer{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 3Px 1px black;
+}
+.color body{
+    background-color: #000000;
+    
+}
+.color .header_container{
+    background-color: black;
+}
+.color *{
+    color: white;
+}
+.color main,.color footer{
+    background-color: #000000;
+}
+#menue_burger{
+    display: none;
+}
+.burger_2{
+        transform: rotate(0deg);
+        transition: 0.5s;
+    }
+    .burger_3{
+        transform: rotate(0deg);
+        transition: 0.5s;
+    }
+    
+#nav_2{
+    display: none;
+}
+.log{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #00a2ff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.white{
+    background-color: #ffffff80;
+}
+#Thème{
+    display: none;
+    color: black;
+}
+#Thème_2{
+    display: none;
+    color: black;
+}
+.color #Thème{
+    color: white;
+}
+.color #Thème_2{
+    color: white;
+}
+#nav{
+    background-color: transparent;
+}
+#sun{
+    width: fit-content;
+}
+.color input{
+    color: black;
+}
+#a:hover{
+    box-shadow: none;
+}
+.color footer{
+
+    box-shadow: 0 0 3Px 1px white;
+}

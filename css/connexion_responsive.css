@@ -1,13 +1,10 @@
 
 @media (max-width:900px) {
     .content_1{
-    height: 85vh;
+    height: 75vh;
 }
 }
 @media (max-width:500px) {
-.content_1{
-    height: 79vh;
-}
 td{
     text-align: center;
 }
@@ -34,9 +31,6 @@ td{
 }
 }
 @media (max-width:395px) {
-    .content_1{
-    height: 69vh;
-}
 td{
     padding: 1px;
     box-sizing: border-box;
@@ -53,7 +47,7 @@ td{
 }
 @media (max-width:400px) {
 .content_1{
-    height: 71.5vh;
+    height: 75vh;
 }
 td{
     padding: 3px;

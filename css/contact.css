@@ -13,6 +13,7 @@ input{
     height: 30px; 
 }
 input,textarea{
+    text-align: left;
     width: 100%;
     border: none;
     padding: 5px;
@@ -25,6 +26,7 @@ input[type="submit"]{
     transform: scale(1);
     transition: 0.5s;
     font-weight: bolder;
+    text-align: center;
 }
 input[type="submit"]:hover{
     box-shadow: 0px 0px 10px 1px gold;
@@ -33,8 +35,7 @@ input[type="submit"]:hover{
 }
 fieldset{
     border: none;
-    border-left: 5px  brown solid;
-    border-right: 5px brown solid;
+    box-shadow: 0px 0px 3px 3px black;
     background-color: #00000082;
     border-radius: 30px;
     width: 50%;
@@ -66,7 +67,7 @@ input:focus,textarea:focus{
     align-items: center;
 }
 legend{
-    background-color: #33d17a9d;
+    background-color: #33d172fd;
     font-family: Helvetica;
     font-size: 17px;
     font-weight: bolder;
@@ -91,4 +92,16 @@ footer{
     display: flex;
     justify-content: center;
     font-weight: bolder;
+}
+.color fieldset{
+    box-shadow: 0 0 3px 3px;
+}
+textarea{
+    color: black;
+}
+.p{
+    color: black;
+}
+.color .p{
+    color: white;
 }

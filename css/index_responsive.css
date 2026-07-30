@@ -1,32 +1,25 @@
-@media (max-width:600px) {
-.container{
-    height: 100vh;
-    display: inline-grid;
-    
-    width: 100%;
-    grid-template-columns:repeat( auto-fit,minmax(250px,1fr));
-    justify-self: center;
-    align-self: center;
+@media (max-width: 1000px) {
+    .img{
+        width: 100%;
+    }
 }
-img{
-    width: 100%;
-    animation: op 2s infinite linear ;
+@media (max-width:500px) {
+    .child{
+        width: 70%;
+    }
+    h1{
+        font-size: 20px;
+    }
+    .img{
+        height: 30vh;
+    }
+    .child{
+        width: 98%;
+        text-align: left;
+    }
 }
-
-.content{
-    width: 100%;
+@media (max-width:300px) {
+    .child{
+        width: 98%;
+    }
 }
-#content_1{
-    grid-row: 1;
-}
-#content_2{
-    grid-row: 2;
-}
-.content_2{
-    width: 80%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-}
-} 
