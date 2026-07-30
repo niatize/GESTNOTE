@@ -42,6 +42,10 @@ legend{
 select{
     padding: 10px;
     width: 100%;
+    color: black;
+}
+.color select{
+    color: black;
 }
 .retour{
     background-color: #33d17a;
