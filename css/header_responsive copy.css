@@ -156,7 +156,7 @@ li{
 .header_box_2{
     width: 40%;
     position: absolute;
-    top: 15vh;
+    top: 11.4vh;
     right: 0;
 } 
 
@@ -170,7 +170,7 @@ li{
 .header_box_2{
     width: 70%;
     position: absolute;
-    top: 100px;
+    top: 16.1vh;
     right: 0;
 } 
 .logo{
@@ -189,13 +189,24 @@ li{
     }
 .header_box_2{
     position: absolute;
-    top: 15.5vh;
+    top: 13.4vh;
     right: 0;
     width: 70%;
 }
 }
 @media (max-width:300px) {
 .logo{
-    width: 25vw;
+    width: 20vw;
+    padding: 0;
+    
+}
+.header_box_2{
+    position: absolute;
+    top: 10.5vh;
+    right: 0;
+    width: 70%;
+}
+.log{
+    font-size: 25px;
 }
 }
