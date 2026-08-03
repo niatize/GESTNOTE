@@ -8,10 +8,10 @@ connexion_form.addEventListener('submit',(e)=>{
     e.preventDefault()
     submit.classList.toggle(`sub_color`)
     rotate.classList.toggle('rotation')
-const email = document.getElementById('email').value
-localStorage.setItem("email",email)
     setTimeout(() => {
         window.location.href="verification_connexion.html"
+        let email = document.getElementById('email').value
+        localStorage.setItem("email",email)
     }, 500);
 })
 let a = document.getElementById('a')

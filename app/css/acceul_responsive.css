@@ -1,0 +1,7 @@
+@media (max-width:500px) {
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(70vw,1fr));
+        gap: 5vw;
+}
+}

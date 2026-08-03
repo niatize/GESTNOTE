@@ -6,7 +6,7 @@ back.addEventListener('click',(e)=>{
 const form = document.getElementById('form')
 form.addEventListener('submit',(e)=>{
     e.preventDefault()
-    window.location.href="acceuil_app.html"
+    window.location.href="../app/acceuil_app.html"
 })
 let adress=localStorage.getItem("email")
 const tab = Array.from(adress)

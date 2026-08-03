@@ -1,0 +1,240 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: arial;
+    color: black;
+    box-sizing: border-box;
+}
+    /* pour fixer et styliser mon header */
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    backdrop-filter: bleur(100%);
+    box-shadow: 0 0 3px 1px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    z-index: 3;
+    box-sizing: border-box;
+}
+header,footer{
+    backdrop-filter: blur(10px);
+        background-color: #ffffff61;
+    }
+        /* style pour personnaliser le logo */
+.header_parent{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerlogo{
+    width: 20%;
+    display: flex; 
+    align-items: center;
+    gap: 20px;
+.logo_div{
+    width: 80%;
+    font-size: 2vw;
+    text-align: center;
+}
+}
+.logo{
+    width: 100%;
+} 
+            /* style de la navbar */
+
+.nav_bar{
+    width: 100%;
+    background-color: transparent;
+}
+nav,ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    background-color: transparent;
+}
+        /* style pour le profile de l'utilisateur */
+.user_profile{
+    width: 20%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.user_profile:hover{
+    cursor: pointer;
+}
+.user_logo{
+    width: 70px;
+}
+.logo_profile{
+    width: 100%;
+}
+.content_2{
+    display: none;
+}
+.profile{
+    width: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+a{
+    padding: 10px;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: .3s;
+    width: fit-content;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+a::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: green;
+    transition: all .3s ease;
+    border-radius: 20px;
+}
+a:hover::before{
+    width: 100%;
+}
+a:hover{
+    color: blue;
+    transform: scale(1.05);
+    transition: .3s;
+}
+.block{
+    display: block;
+}
+ 
+.none{
+    display: none;
+}  
+.flex{
+    display: flex;
+}         /*   positionnement du boutton retour de l'option de profile */
+.back{
+    color: black;
+    position: absolute;
+    top: 0;
+}
+.burger{
+    background-color: black;
+    height: 5px;
+    width: 70px;
+    border-radius: 20px;
+}
+.menue_burger{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-around;
+    height: 50px;
+    width: fit-content;
+}
+.burger_1{
+        display: none;
+}
+.burger_2{
+    position: relative;
+    top: 15px;
+    transform: rotate(45deg);
+}
+.burger_3{
+    position: relative;
+    top: -11px;
+    transform: rotate(-45deg);
+}
+.menue_burger{
+    display: none;
+}
+.auther{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.black *{
+    background-color:black;
+    color: white;
+}
+.black .burger{
+    background-color: white;
+}
+/* suppression des listes de la balise ul*/
+li{
+    list-style: none;
+    background-color: transparent;
+}
+.gap{
+    display: flex;
+    gap: 200px;
+}
+.logo_name{
+    color: hwb(198 0% 0%);
+    font-size: 2.1vw;
+}
+.thème{
+    font-size: 4vw;
+    color: red;
+    background-color: transparent;
+}
+a:hover{
+    color: goldenrod;
+}
+ #a{
+    color: goldenrod;
+}
+#a::before{
+    content: '';
+    width: 100%;
+}
+.logo_name {
+    color: #00a2ff;
+}
+.user_name{
+    width: 100%;
+    font-size: xx-large;
+}
+span{
+    color: #00a2ff;
+}
+.black * span{
+    background-color: transparent;
+    color: #00a2ff;
+}
+h1,.black h1{
+    background-color: #038855;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+h3{
+    text-align: center;
+    padding: 10px;
+    font-weight: bolder;
+    color: #0056b3;
+    font-weight: bolder;
+    font-size: 24px;
+}
+.black 
+h3{
+    text-align: center;
+    padding: 10px;
+    font-weight: bolder;
+    color: #0056b3;
+    font-weight: bolder;
+    font-size: 24px;
+}

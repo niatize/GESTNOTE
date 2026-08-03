@@ -1,0 +1,123 @@
+@media (max-width:1070px) {
+    .auther{
+        z-index: 3;
+        color: black;
+        position: absolute;
+        top: 12.5vh;
+        right: 0;
+        height: 97vh;
+        display: none;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        box-sizing: border-box;
+        backdrop-filter: blur(50px);
+        background-color: #ffffffe6;
+        width: 50%;
+    }
+    nav,.ul{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 3vh;
+        box-sizing: border-box;
+        background-color: transparent;
+    }
+    .li{
+        padding: 20px;
+        display: flex;
+        width: 100%;
+        background-color: transparent;
+        box-sizing: border-box;
+    }
+    .user_profile{
+        width: 100%;
+        display: flex;
+        justify-content: start;
+    }
+    .black .li{
+        background-color: transparent;
+    }
+    .menue_burger{
+        display: flex;
+    }
+    .burger_2{
+        background-color: red;
+    }
+    .burger_3{
+        background-color: red;
+    }
+    .black .burger_2{
+        background-color: red;
+    }
+    .black .burger_3{
+        background-color: red;
+    }
+    .flex{
+        display: flex;
+    }
+    .black .auther{
+        background-color: #000000ea;
+    }
+    .log{
+        font-size: 4vw;
+    }
+.headerlogo {
+  width: 46%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logo_name {
+    color: #00a2ff;
+  font-size: 6vw;
+}
+}
+@media (max-width:900px) {
+    
+    .auther{
+        top: 13.3vh;
+    }
+}
+@media (max-width:800px) {
+    .auther{
+    top: 12vh;
+}
+h1{
+    font-size: 3vw;
+}
+}
+@media (max-width:700px) {
+    .burger{
+        width: 60px;
+    }
+    .auther{
+    top: 10.5vh;
+}
+}
+@media (max-width:600px) {
+    .auther{
+    top: 10.2vh;
+}
+h1{
+    font-size: 5vw;
+}
+}
+@media (max-width:350px) {
+    .li{
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .auther{width: 100%;}
+}
+@media (max-width:200px) {
+    .li{
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .auther,.ul{
+        width: 100%;
+    justify-content: space-around;}
+}

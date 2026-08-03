@@ -59,10 +59,11 @@ h1{
     position: relative;
     top: -15px;
     box-shadow: 0 0 1px 1px brown;
+    background-color: gold;
     transition: .5s;
 }
 .color .child{
-    background-color: rgb(39, 38, 38);
+    background-color: #272626;
 }
 .but{
     margin-top: 40px;
@@ -90,9 +91,6 @@ h1{
     transition: .5s;
     box-shadow: 0 0 5px 1px gold;
 }
-h3{
-    text-align: center;
-}
 .color h3{
     background-color: transparent;
     color: #0056b3;
@@ -101,6 +99,7 @@ body{
     scroll-behavior: smooth;
 }
 h3{
+    text-align: center;
     padding: 10px;
     font-weight: bolder;
     color: #0056b3;
