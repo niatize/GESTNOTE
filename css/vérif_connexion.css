@@ -57,9 +57,12 @@ fieldset{
     animation: shadow 10s linear infinite;
     box-sizing: border-box;
 }
-
+.color fieldset{
+    background-color: #d2c0c082;
+}
 legend{
-    width: 10vw;
+    width: fit-content;
+    height: fit-content;
     border-radius: 50%;
     font-size: 20px;
     padding: 10px;
@@ -69,7 +72,8 @@ legend{
     color: white;
 }
 .image{
-    width: 100%;
+    width: 100px;
+    height: 100px;
     box-sizing: border-box;
     border-radius: 100%;
     box-shadow: 0 0 3px 3px #33d17a;

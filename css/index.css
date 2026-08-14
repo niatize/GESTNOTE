@@ -55,12 +55,13 @@ h1{
   justify-content: center;
   text-align: left;
 }
-.child:hover{
+.child:hover,.color .child:hover{
     position: relative;
     top: -15px;
     box-shadow: 0 0 1px 1px brown;
-    background-color: gold;
+    background-color: #2ea3b2;
     transition: .5s;
+    color: black;
 }
 .color .child{
     background-color: #272626;
@@ -87,7 +88,7 @@ h1{
 .button:hover{
     transform: scale(1.1);
     border-radius: 2px 20px 5px;
-    background-color: rgb(0, 174, 255);
+    background-color: #0037ff;
     transition: .5s;
     box-shadow: 0 0 5px 1px gold;
 }

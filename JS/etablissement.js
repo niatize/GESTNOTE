@@ -2,7 +2,7 @@ const form = document.querySelectorAll('form');
 form.forEach(form => {
     form.addEventListener("submit",(e)=>{
         e.preventDefault()
-    window.location.href = "connexion.html"  
+    window.location.href = "connexion.php"  
     })  
 });
 var compteur = 2

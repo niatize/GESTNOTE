@@ -19,6 +19,9 @@ fieldset{
     box-sizing: border-box;
     align-content: center;
 }
+.color fieldset{
+    background-color: gray;
+}
 td{
     padding: 20px;
     box-sizing: border-box;

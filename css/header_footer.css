@@ -7,7 +7,11 @@
     font-family: sans-serif;
     text-align: center;
 }
+body{
+    overflow-x: hidden;
+}
 header{
+    width:100%;
     position: sticky;
     top: 0;
     left: 0;
@@ -76,8 +80,10 @@ a:hover{
 box-shadow: 0 0 2px 2px gold;
 }
 footer{
+    width:100%;
     height: 10vh;
     display: flex;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 3Px 1px black;
