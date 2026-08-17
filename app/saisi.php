@@ -1,14 +1,37 @@
 <?php    
          // creation d'une session pour voir la serie de l'utilisateur
          session_start();
-
+        include_once ("../data_base.php");
     if (isset($_SESSION["user_name"]) && isset($_SESSION["profil"]) ){
         $user_name = $_SESSION["user_name"];
+        $name = $user_name;
         $profil= $_SESSION['profil'];
         $tab_name = explode(" ",$user_name);
         $user_name = $tab_name[0];
     }else{
         $user_name = "Mon profil";
+    }
+    try {
+        $sql = $pdo->prepare("SELECT * FROM user WHERE full_name = :nom");
+        $sql->execute(["nom"=>$name]);
+        $user_info = $sql->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $th) {
+        //throw $th;
+        die("Erreur".$th->getMessage());
+    }
+
+
+    //récupération des classes en tableau
+
+    $classes = explode(',',$user_info["classes"]);
+    //initialisation des classes par leurs nombres
+    $matieres = explode(',',$user_info["matieres"]);
+    function create_option($table){
+        echo '<select >';
+        for($i=0;$i<count($table);$i++){
+            echo '<option>'.htmlspecialchars($table[$i]).'</option>';
+        }
+        echo '</select>';
     }
 
 
@@ -23,6 +46,7 @@
     <link rel="stylesheet" href="/app/css/all_style.css">
     <link rel="stylesheet" href="/app/css/all_style_responsive.css">
     <link rel="stylesheet" href="/app/css/acceuil.css">
+    <link rel="stylesheet" href="/app/css/saisis.css">
     <script src="/app/js/header.js" defer></script>
     <script src="/app/js/color.js" defer></script>
 </head>
@@ -65,13 +89,34 @@
         </div>
     </header>
     <main id="main">
-        <?php include'div_2.php' ?>
+        <?php include_once('div_2.php') ?>
         <div class="content_1" id="content_1">
-            <?php require("serie.php") ?>
-        <nav>
-            
-        </nav>
-
+            <h1>
+            <?php 
+                $series = explode(", ",$user_info["serie"]);
+                if($series[1] !== null){
+                echo '<div class="generale div" id="generale"><a href="">'.$series[0].'</a></div>';
+                echo "<hr>";
+                echo '<div class="technique div"><a href="">'.$series[1].'</a></div>';
+                }elseif($series[1]==null && $series[0]!==null){
+                    echo '<div class="generale div" id="generale"><a href="">'.$series[0].'</a></div>';
+                }
+            ?>
+        </h1>
+        <section id="class" class="class">
+            <nav class="nav2">
+                    <ol class="ol">
+                        <?php
+                            for($i=0;$i<count($classes);$i++){
+                                echo '<li><a href="">'. $classes[$i].'</a>'.create_option($matieres).'</li>';
+                            }
+                        ?>
+                    </ol>
+            </nav>
+        </section><br>
+        <div class="search">
+            <input type="search" name="" id="" placeholder="Rechercher une classe..."><button type="button">Rechercher...</button>
+        </div>
         </div>
     </main>
 </body>

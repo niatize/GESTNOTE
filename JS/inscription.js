@@ -156,9 +156,8 @@ logo_profile_input.addEventListener('change',(e)=>{
             tables.push(checkbox.value)
         }
     });
-            matiere.value = tables.join(",")
+            matiere.value= tables.join(",")
     })
-
 
 
             // pour la selection des matières
@@ -167,8 +166,8 @@ logo_profile_input.addEventListener('change',(e)=>{
     const input_matiere = document.getElementById('matiere')
     const search_button_matiere = document.getElementById('search_button_matiere')
     let option = datalist_matieres_options.options
-
-        search_button_matiere.addEventListener('click',(e)=>{
+    let search_submit_matiere = document.getElementById('search_submit_matiere')
+        search_submit_matiere.addEventListener('click',(e)=>{
         e.preventDefault()
     let urls = null
         for( let i = 0; i < option.length; i++){
@@ -178,6 +177,6 @@ logo_profile_input.addEventListener('change',(e)=>{
             }
         }
         if(urls !== null){
-            window.location.href=`#${url}`
+            window.location.href=`#${urls}`
         }
     })

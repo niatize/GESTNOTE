@@ -61,7 +61,7 @@
 
         </div>
     </header>
-    <main id="main"><br>
+    <main id="main">
         <div class="content_2" id="content_2" style="position: relative;">
             <span class="back" id="back">←</span>
             <div class="profile" align="center">

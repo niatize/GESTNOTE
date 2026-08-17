@@ -1,0 +1,63 @@
+.div{
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+}
+h1{
+    display: flex;
+    justify-content: space-around;
+}
+.nav2{
+    background-color: #04c5f560;
+    width: 100%;
+    height: fit-content;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.ol{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    li{
+        padding: 10px;
+    }
+}
+main{
+    h1{
+        background-color: #04c5f5bb;
+    }
+    li{
+        background-color: transparent;
+    }
+    a:hover{
+        color: red;
+    }
+    a::before{
+        content: none;
+    }
+    a{
+        position: relative;
+        top: 0;
+        width: fit-content;
+    }
+}
+.black a:hover{
+    color: tomato;
+}
+.search{
+    display: flex;
+    justify-content: center;
+}
+input{
+    padding: 7px;
+}
+.black a{
+    background-color: transparent;
+}
+select{
+    padding: 4px;
+    width: 100px;
+    height: fit-content;
+    position: relative;
+    
+}
