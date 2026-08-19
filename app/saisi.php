@@ -32,6 +32,7 @@
             echo '<option>'.htmlspecialchars($table[$i]).'</option>';
         }
         echo '</select>';
+        return null;
     }
 
 

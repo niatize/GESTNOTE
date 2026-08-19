@@ -1,0 +1,45 @@
+.caption{
+    width: fit-content;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background-color: #daa52085;
+}
+.container{
+    background-color: #ffffff28;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+}
+form{
+    overflow-y: scroll;
+    height: 20vh;
+}
+input{
+    padding: 5px;
+    font-size: 20px;
+    width: 40vw;
+}
+td{
+    padding: 10px;
+    align-items: center;
+}
+fieldset{
+    width: 50%;
+    position: fixed;
+    top: 40vh;
+}
+button{
+    background-color: goldenrod;
+    padding: 5px;
+    font-size: large;
+    border: none;
+    border-radius: 10px;
+}
