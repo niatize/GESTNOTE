@@ -20,21 +20,37 @@
         die("Erreur".$th->getMessage());
     }
 
+                // pour voir les classes de l'utilisateur en fonction de ses matières
+ 
+            $matieres_bdd = [];
+            $matiere_get = [];       
 
-    //récupération des classes en tableau
+            $classes = explode('+ ',$user_info['classes']);
+            $matieres = explode('+',$user_info['matieres']);
+if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"]) && !empty($_GET['matiere'])) {
+    $classe = $_GET["classe"];
+    $matiere = $_GET["matiere"];
+    $matiere_get = explode(', ',$matiere);
+    try {
+        $sql = $pdo->prepare('SELECT id_class FROM classe WHERE nom = :nom');
+        $sql->execute(["nom" => $classe]);
+        $id_classe = $sql->fetchColumn();
 
-    $classes = explode(',',$user_info["classes"]);
-    //initialisation des classes par leurs nombres
-    $matieres = explode(',',$user_info["matieres"]);
-    function create_option($table){
-        echo '<select >';
-        for($i=0;$i<count($table);$i++){
-            echo '<option>'.htmlspecialchars($table[$i]).'</option>';
+        if ($id_classe) {
+            $sql = $pdo->prepare("
+            SELECT nom
+            FROM matiere
+            INNER JOIN matiere_coeff ON matiere_coeff.id_mat = matiere.id_mat
+            WHERE matiere_coeff.id_class = :id_class
+            ");
+            $sql->execute(["id_class" => $id_classe]);
+            $matieres_bdd = $sql->fetchAll(PDO::FETCH_COLUMN); 
         }
-        echo '</select>';
-        return null;
-    }
 
+    } catch (PDOException $e) {
+        die("ERROR : " . $e->getMessage());
+    }
+}
 
 
 ?>
@@ -91,34 +107,53 @@
     </header>
     <main id="main">
         <?php include_once('div_2.php') ?>
-        <div class="content_1" id="content_1">
+        <div class="content_1" id="content_1" style="position: relative;" >
             <h1>
             <?php 
-                $series = explode(", ",$user_info["serie"]);
+                $series = explode(",",$user_info["serie"]);
                 if($series[1] !== null){
-                echo '<div class="generale div" id="generale"><a href="">'.$series[0].'</a></div>';
+                echo '<div class="generale div" id="generale">'.$series[0].'</div>';
                 echo "<hr>";
-                echo '<div class="technique div"><a href="">'.$series[1].'</a></div>';
+                echo '<div class="technique div">'.$series[1].'</div>';
                 }elseif($series[1]==null && $series[0]!==null){
-                    echo '<div class="generale div" id="generale"><a href="">'.$series[0].'</a></div>';
+                    echo '<div class="generale div" id="generale">'.$series[0].'</div>';
                 }
             ?>
         </h1>
-        <section id="class" class="class">
-            <nav class="nav2">
-                    <ol class="ol">
-                        <?php
-                            for($i=0;$i<count($classes);$i++){
-                                echo '<li><a href="">'. $classes[$i].'</a>'.create_option($matieres).'</li>';
+        <div class="classes class">
+
+            <div class="position matier" onclick="hidden_class()" id="hidden_class">
+                <--
+            </div>
+            <div class="position matier" onclick="show_class()" id="show_class" style="display: none;">
+                -->
+            </div>
+            <?php 
+                for($i=0;$i<count($classes);$i++){
+                    $classe = trim($classes[$i]);
+                    echo '<div class="classe class"><a href="/app/saisi.php?'.http_build_query(["classe"=>$classe,"matiere" => $matieres[$i]]).'">'.$classes[$i].'</a></div>';
+                }
+            ?>
+        </div>
+        <div class="matiere" id="matiere">
+            <?php
+                $test = false;
+                for($i = 0; $i<count($matiere_get);$i++){
+                    for($j = 0;$j< count($matieres_bdd);$j++){
+                            if($matiere_get[$i] === $matieres_bdd[$j]){
+                                $test = true;
                             }
-                        ?>
-                    </ol>
-            </nav>
-        </section><br>
-        <div class="search">
-            <input type="search" name="" id="" placeholder="Rechercher une classe..."><button type="button">Rechercher...</button>
+                    }
+                } 
+                if($test){
+                    for($i=0;$i<count($matiere_get);$i++){
+                        echo '<div class="matier"><a href="">'.htmlspecialchars($matiere_get[$i]).'</a></div>';
+                    }
+                }
+            ?>
         </div>
         </div>
     </main>
+    <script src="js/saisis.js" defer></script>
 </body>
 </html>

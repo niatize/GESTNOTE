@@ -1,45 +1,73 @@
 
+<?php
+        session_start();
+        include_once'../data_base.php';
+        if(isset($_SESSION['name']) && !empty($_SESSION['name'])){
+            $name = $_SESSION['name'];
+            if(isset($_POST['classe']) && isset($_POST['matiere']) && !empty($_POST["matiere"]) && !empty($_POST["classe"])){
+                $classes = $_POST['classe'];
+                $matieres = $_POST['matiere'];
+                $classes = implode('+ ',$classes);
+                $matieres = implode('+ ',$matieres);
+                try{
+                    $sql = $pdo->prepare("UPDATE user SET classes = :classes, matieres = :matieres WHERE full_name = :full_name");
+                    $sql->execute([
+                        "classes"=>$classes,
+                        "matieres"=>$matieres,
+                        "full_name"=>$name
+                    ]);
+                    echo "<script>alert('création de compte réussis')</script>";
+                    header("location: ../connexion.php");
+                }catch(PDOException $e){
+                    die("ERROR :  ".$e->getMessage()." ligne".$e->getLine());
+                }
+            }
 
+        }
+?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>choix des classes avec matières</title>
     <link rel="stylesheet" href="css/mat_peof.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/header_responsive copy.css">
 </head>
+<body>
+    <header>
+        <?php require_once'../header.php' ?>
+    </header>
 
     <div class="container">
 
             <fieldset>
-                <legend>Entrer les classes affecté des matières a enseigner</legend>
-                <form action="" style="position: relative;">
+                <legend align="center">Entrer les classes affecté des matières a enseigner</legend>
+                <form action="" method="post" style="position: relative;">
                     <table>
                             <tr class="caption">
-                                <td colspan="2" ><label for="add_classe">Ajouter une classe ? </label><button type="button" id="add_classe" onclick="create_classe()">Ajouter</button></td>
+                                <td colspan="2" align="center"><label for="add_classe" style="color: black;">Ajouter une classe ? </label><button type="button" id="add_classe" onclick="create_classe()">Ajouter</button></td>
                             </tr>
                         <tbody id="tbody">
                             <tr>
-                               <td> <label for="classe_1">Classe:</label><input type="search" name="classe_1" id="classe_1" list="select_matière" required></td>
-                               <td> <label for="matière_1">Matières:</label><input type="search" name="matiere_1" id="matière_1" required></td>
+                               <td> <label for="classe_1" style=" color:black;">Classe:</label><input type="search" name="classe[]" id="classe_1"placeholder="Entrer la classe" list="classes_list" required></td>
+                               <td> <label for="matière_1"style=" color:black;">Matières:</label><input type="search" name="matiere[]" id="matière_1" placeholder="Entrer les matières" class="matiere" required></td>
                             </tr>
                         </tbody>
                     </table>
+                    <div class="form_sub">
+                            <td><button type="button" id="retour">RETOUT</button></td>
+                            <td><button type="submit" id="enregistrer">ENREGISTRER</button></td>
+                    </div>
                 </form>
             </fieldset>
 
     </div>
     <script src="js/mat_prof.js" defer></script>
-<body>
-</html>
-
-
-
-
-
-
-
+    <script src="../JS/color_pages.js"></script>
+    <script src="../JS/header.js" defer></script>
 
 
 
@@ -69,28 +97,132 @@
 
 
     
-                                   
-                    <div class="div" style="display: none;">
 
 
-                                        </div>
 
-
-                                        Matières enseignées :
+<datalist id="classes_list">
+  <option value="Sixième">Sixième</option>
+  <option value="Cinquième">Cinquième</option>
+  <option value="Quatrième - Allemand">Quatrième - Allemand</option>
+  <option value="Quatrième - Espagnol">Quatrième - Espagnol</option>
+  <option value="Quatrième - Chinois">Quatrième - Chinois</option>
+  <option value="Quatrième - Arabe">Quatrième - Arabe</option>
+  <option value="Troisième - Allemand">Troisième - Allemand</option>
+  <option value="Troisième - Espagnol">Troisième - Espagnol</option>
+  <option value="Troisième - Chinois">Troisième - Chinois</option>
+  <option value="Troisième - Arabe">Troisième - Arabe</option>
+  <option value="Seconde A1">Seconde A1</option>
+  <option value="Seconde A2">Seconde A2</option>
+  <option value="Seconde A3">Seconde A3</option>
+  <option value="Seconde A4 - Allemand">Seconde A4 - Allemand</option>
+  <option value="Seconde A4 - Espagnol">Seconde A4 - Espagnol</option>
+  <option value="Seconde A4 - Chinois">Seconde A4 - Chinois</option>
+  <option value="Seconde A4 - Arabe">Seconde A4 - Arabe</option>
+  <option value="Seconde A5">Seconde A5</option>
+  <option value="Seconde C">Seconde C</option>
+  <option value="Seconde D">Seconde D</option>
+  <option value="Seconde SH">Seconde SH</option>
+  <option value="Seconde AC">Seconde AC</option>
+  <option value="Première A1">Première A1</option>
+  <option value="Première A2">Première A2</option>
+  <option value="Première A3">Première A3</option>
+  <option value="Première A4 - Allemand">Première A4 - Allemand</option>
+  <option value="Première A4 - Espagnol">Première A4 - Espagnol</option>
+  <option value="Première A4 - Chinois">Première A4 - Chinois</option>
+  <option value="Première A4 - Arabe">Première A4 - Arabe</option>
+  <option value="Première A5">Première A5</option>
+  <option value="Première ABI">Première ABI</option>
+  <option value="Première C">Première C</option>
+  <option value="Première D">Première D</option>
+  <option value="Première TI">Première TI</option>
+  <option value="Première SH">Première SH</option>
+  <option value="Première AC">Première AC</option>
+  <option value="Terminale A1">Terminale A1</option>
+  <option value="Terminale A2">Terminale A2</option>
+  <option value="Terminale A3">Terminale A3</option>
+  <option value="Terminale A4 - Allemand">Terminale A4 - Allemand</option>
+  <option value="Terminale A4 - Espagnol">Terminale A4 - Espagnol</option>
+  <option value="Terminale A4 - Chinois">Terminale A4 - Chinois</option>
+  <option value="Terminale A4 - Arabe">Terminale A4 - Arabe</option>
+  <option value="Terminale A5">Terminale A5</option>
+  <option value="Terminale ABI">Terminale ABI</option>
+  <option value="Terminale C">Terminale C</option>
+  <option value="Terminale D">Terminale D</option>
+  <option value="Terminale TI">Terminale TI</option>
+  <option value="Terminale SH">Terminale SH</option>
+  <option value="Terminale AC">Terminale AC</option>
+  <option value="1ère année MACO">1ère année MACO</option>
+  <option value="2ème année MACO">2ème année MACO</option>
+  <option value="3ème année MACO">3ème année MACO</option>
+  <option value="4ème année MACO">4ème année MACO</option>
+  <option value="1ère année Électricité">1ère année Électricité</option>
+  <option value="2ème année Électricité">2ème année Électricité</option>
+  <option value="3ème année Électricité">3ème année Électricité</option>
+  <option value="4ème année Électricité">4ème année Électricité</option>
+  <option value="1ère année Menuiserie">1ère année Menuiserie</option>
+  <option value="2ème année Menuiserie">2ème année Menuiserie</option>
+  <option value="3ème année Menuiserie">3ème année Menuiserie</option>
+  <option value="4ème année Menuiserie">4ème année Menuiserie</option>
+  <option value="1ère année Froid">1ère année Froid</option>
+  <option value="2ème année Froid">2ème année Froid</option>
+  <option value="3ème année Froid">3ème année Froid</option>
+  <option value="4ème année Froid">4ème année Froid</option>
+  <option value="1ère année ESF">1ère année ESF</option>
+  <option value="2ème année ESF">2ème année ESF</option>
+  <option value="3ème année ESF">3ème année ESF</option>
+  <option value="4ème année ESF">4ème année ESF</option>
+  <option value="Seconde F1">Seconde F1</option>
+  <option value="Seconde F2">Seconde F2</option>
+  <option value="Seconde F3">Seconde F3</option>
+  <option value="Seconde F4">Seconde F4</option>
+  <option value="Seconde F5">Seconde F5</option>
+  <option value="Seconde F7">Seconde F7</option>
+  <option value="Seconde G1">Seconde G1</option>
+  <option value="Seconde G2">Seconde G2</option>
+  <option value="Seconde G3">Seconde G3</option>
+  <option value="Seconde ESF">Seconde ESF</option>
+  <option value="Seconde CH">Seconde CH</option>
+  <option value="Seconde IB">Seconde IB</option>
+  <option value="Seconde IH">Seconde IH</option>
+  <option value="Seconde MA">Seconde MA</option>
+  <option value="Seconde CM">Seconde CM</option>
+  <option value="Première F1">Première F1</option>
+  <option value="Première F2">Première F2</option>
+  <option value="Première F3">Première F3</option>
+  <option value="Première F4">Première F4</option>
+  <option value="Première F5">Première F5</option>
+  <option value="Première F7">Première F7</option>
+  <option value="Première G1">Première G1</option>
+  <option value="Première G2">Première G2</option>
+  <option value="Première G3">Première G3</option>
+  <option value="Première ESF">Première ESF</option>
+  <option value="Première CH">Première CH</option>
+  <option value="Première IB">Première IB</option>
+  <option value="Première IH">Première IH</option>
+  <option value="Première MA">Première MA</option>
+  <option value="Première CM">Première CM</option>
+  <option value="Terminale F1">Terminale F1</option>
+  <option value="Terminale F2">Terminale F2</option>
+  <option value="Terminale F3">Terminale F3</option>
+  <option value="Terminale F4">Terminale F4</option>
+  <option value="Terminale F5">Terminale F5</option>
+  <option value="Terminale F7">Terminale F7</option>
+  <option value="Terminale G1">Terminale G1</option>
+  <option value="Terminale G2">Terminale G2</option>
+  <option value="Terminale G3">Terminale G3</option>
+  <option value="Terminale ESF">Terminale ESF</option>
+  <option value="Terminale CH">Terminale CH</option>
+  <option value="Terminale IB">Terminale IB</option>
+  <option value="Terminale IH">Terminale IH</option>
+  <option value="Terminale MA">Terminale MA</option>
+  <option value="Terminale CM">Terminale CM</option>
+</datalist>
                                         
-                                            <input type="text" name="matieres" id="matiere" title="Sélectionner la liste de vos matières enseignées" class="select" required placeholder="Cliquer ici pour sélectionner les matières"><br><br><br>
-
-
                                             
-                                            <div class="div" id="select_div_matiere" >
+                                            <div class="div" id="select_div_matiere" style="position: relative;">
                                                 <div class="seach">
                                                             <input type="search" id="search_button_matiere" class="input_search" placeholder="Rechercher une matière..." list="matieres_options">
-                                                            <button class="input_submit" type="button" id="search_submit_matiere">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search">
-                                                                    <path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/>
-                                                                </svg>
-                                                            </button>
-                                                            
+                                                            <button class="input_submit research" type="button" id="search_submit_matiere">Chercher...</button>
                                         <!-- Datalist principale des matières -->
                                         <datalist id="matieres_options">
                                             <!-- Enseignement Général : Sciences & Littérature -->
@@ -180,7 +312,7 @@
                                             <option value="sec_systemes_d_information_bases_de_donnees">Systèmes d'Information & Bases de Données</option>
                                             <option value="sec_reseaux_informatiques">Réseaux Informatiques</option>
                                         </datalist>
-                                        <button id="accept_matiere" type="button">OK</button>
+                                        <button id="accept_matiere" type="button">VALIDER</button>
                                         </div>
                                         <section id="liste_matieres">
                                             <!-- Enseignement Général : Sciences & Mathématiques -->
@@ -200,7 +332,7 @@
                                             </section>
 
                                             <section id="sec_svteehb">
-                                                <input type="checkbox" class="matiere_check" id="input_svteehb" value="SVT / EEHB (Sciences de la Vie et de la Terre)">
+                                                <input type="checkbox" class="matiere_check" id="input_svteehb" value="SVT / EEHB">
                                                 <label for="input_svteehb">SVT / EEHB (Sciences de la Vie et de la Terre)</label>
                                             </section>
 
@@ -209,7 +341,20 @@
                                                 <input type="checkbox" class="matiere_check" id="input_technologie_information" value="Technologie de l'Information (TI)">
                                                 <label for="input_technologie_information">Technologie de l'Information (TI)</label>
                                             </section>
+                                            <section id="sec_informatique_generale">
+                                                <input type="checkbox" class="matiere_check" id="input_informatique_generale" value="Informatique Générale / TIC">
+                                                <label for="input_informatique_generale">Informatique Générale / TIC</label>
+                                            </section>
 
+                                            <section id="sec_informatique_theorique">
+                                                <input type="checkbox" class="matiere_check" id="input_informatique_theorique" value="Informatique Théorique">
+                                                <label for="input_informatique_theorique">Informatique Théorique</label>
+                                            </section>
+
+                                            <section id="sec_informatique_pratique">
+                                                <input type="checkbox" class="matiere_check" id="input_informatique_pratique" value="Informatique Pratique / Systèmes d'Information">
+                                                <label for="input_informatique_pratique">Informatique Pratique / Systèmes d'Information</label>
+                                            </section>
                                             <!-- Langues & Littérature -->
                                             <section id="sec_francais">
                                                 <input type="checkbox" class="matiere_check" id="input_francais" value="Langue Française">
@@ -508,7 +653,7 @@
 
                                             <!-- Enseignement Technique Tertiaire (STT) - Informatique de Gestion & Réseaux -->
                                             <section id="sec_algorithmique_programmation">
-                                                <input type="checkbox" class="matiere_check" id="input_algorithmique_programmation" value="Algorithmique & Programmation">
+                                                <input type="checkbox" class="matiere_check" id="input_algorithmique_programmation" value="Algorithmique et Programmation">
                                                 <label for="input_algorithmique_programmation">Algorithmique & Programmation</label>
                                             </section>
 
@@ -523,5 +668,13 @@
                                             </section>
                                         </section>
                                     </div>
+
+    <footer style="position: absolute; bottom:0;">
+        <p align="center">
+            <span style="color: #00a2ff;font-weight: bolder">GESTNOTE</span> — Douala-Cameroun
+
+                © create by NI PRO DEV 
+        </p>
+    </footer>
 </body>
 </html>

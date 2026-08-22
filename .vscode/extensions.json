@@ -2,6 +2,7 @@
     "recommendations": [
         "yandeu.five-server",
         "phu1237.live-reload",
-        "wscats.cors-browser"
+        "wscats.cors-browser",
+        "google.gemini-cli-vscode-ide-companion"
     ]
 }

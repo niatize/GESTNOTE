@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['submit'])){
             $ecole =   $_POST['ecole'];
                 //convertir la serie en chaine
             $serie = $_POST["serie"];
-            $serie = implode($serie);
+            $serie = implode(',',$serie);
             $ecole = $_POST['ecole'];
             $logo = $_FILES['logo_profile'];
             $logo_name = $logo['name'];      //nom originale du fichier
@@ -54,6 +54,7 @@ if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['submit'])){
                         // déplacement du fichier dans le dossier finale
                     move_uploaded_file($logo_server_space,$chemin_finale);
                     $_SESSION['profil'] = $chemin_finale;
+                    $_SESSION['name'] = $nom;
                 }
 
             try{

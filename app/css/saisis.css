@@ -6,25 +6,12 @@
 h1{
     display: flex;
     justify-content: space-around;
-}
-.nav2{
-    background-color: #04c5f560;
-    width: 100%;
-    height: fit-content;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-}
-.ol{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    li{
-        padding: 10px;
-    }
+    gap: 30px;
 }
 main{
     h1{
         background-color: #04c5f5bb;
+        height: 70px;
     }
     li{
         background-color: transparent;
@@ -40,24 +27,81 @@ main{
         top: 0;
         width: fit-content;
     }
+    hr{
+        font-weight: bolder;
+        font-size: larger;
+    }
 }
-.black a:hover{
-    color: tomato;
-}
-.search{
+.classes,.black .classes{
+    position: sticky;
+    top: 0;
+    background-color: #04c5f5bb;
     display: flex;
-    justify-content: center;
-}
-input{
-    padding: 7px;
-}
-.black a{
-    background-color: transparent;
-}
-select{
-    padding: 4px;
-    width: 100px;
-    height: fit-content;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80vh;
+    align-items: start;
+    width: 20vw;
+    padding: 5px;
+    font-size: large;
+    overflow-y: scroll;
+    font-weight: bolder;
     position: relative;
-    
+    a::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        white-space: inherit;
+        width: 0%;
+        height: 3px;
+        transition: all .5s ease;
+        background-color: red;
+    }
+    a::before:hover{
+        width: 100%;
+    }
+}
+.classe ,.black .classe{
+    background-color: transparent;
+    width: fit-content;
+}
+.black a,a{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+}
+.matiere{
+    background-color: transparent;
+    width: 80%;
+    display: flex;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    overflow-x: scroll;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #04c5f5bb;
+    gap: 40px;
+    overflow-wrap: break-word;
+}
+.matier{
+    background-color: transparent;
+    height: fit-content;
+    a{
+        width: fit-content;
+    }
+}
+#hidden_class,#show_class{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#hidden_class:hover,#show_class:hover{
+    cursor: pointer;
+}
+.hidden{
+    display: none;
 }
