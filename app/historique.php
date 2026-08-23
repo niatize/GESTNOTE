@@ -19,7 +19,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GESTNOTE</title>
+    <title>Historique de realisation</title>
     <link rel="stylesheet" href="/app/css/all_style.css">
     <link rel="stylesheet" href="/app/css/all_style_responsive.css">
     <link rel="stylesheet" href="/app/css/acceuil.css">
@@ -42,7 +42,7 @@
                     <ul id="ul" class="ul" style="background-color: transparent;">
                         <li id="li" class="li"><a href="/app/acceuil_app.php"  style="background-color: transparent;">ACCEUIL</a></li>
                         <li class="li"><a href="/app/historique.php" id="a" style="background-color: transparent;">HISTORIQUE</a></li>
-                        <li class="li"><a href="/app/confection.php"  style="background-color: transparent;">CONTRÔLE DES BULLETINS</a></li>
+                        <li class="li"><a href="/app/inscription.php"  style="background-color: transparent;">INSCRIPTION D'ÉLÈVES</a></li>
                         <li class="li"><a href="/app/saisi.php" style="background-color: transparent;">SAISIR LES NOTES</a></li>
                         <li class="li"><a href="/app/calcul.php" style="background-color: transparent;">CALCULS</a></li>
                         <li class="li"><a href="/app/inprimer.php" style="background-color: transparent;">IMPRIMER</a></li>

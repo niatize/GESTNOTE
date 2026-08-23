@@ -1,7 +1,7 @@
 
         <div class="header_container">
             <div class="header_box_1" id="header_box_1">
-                <img src="/image/logo.png" class="logo" alt="">
+                <img src="image/logo.png" class="logo" alt="">
             <div class="log">GESTNOTE</div>
             </div>
             <div id="menue_burger">
@@ -15,7 +15,7 @@
                     <li><a href="index.php">ACCEUIL</a></li>
                    <li><a href="démo.php">DEMO</a></li>
                     <li><a href="contact.php">CONTACT</a></li>
-                    <li><a href="/connexion.php">CONNEXION</a></li>
+                    <li><a href="connexion.php">CONNEXION</a></li>
                     
                         <li id="moon">
                             <span class="sun_moon" id="Thème">Thème sombre</span>

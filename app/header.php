@@ -7,6 +7,8 @@
         $profil= $_SESSION['profil'];
         $tab_name = explode(" ",$user_name);
         $user_name = $tab_name[0];
+    }else{
+        $user_name = null;
     }
 
 
@@ -27,7 +29,7 @@
                     <ul id="ul" class="ul" style="background-color: transparent;">
                         <li id="li" class="li"><a href="/app/acceuil_app.php" id="a" style="background-color: transparent;">ACCEUIL</a></li>
                         <li class="li"><a href="/app/historique.php" style="background-color: transparent;">HISTORIQUE</a></li>
-                        <li class="li"><a href="/app/confection.php"  style="background-color: transparent;">CONTRÔLE DES BULLETINS</a></li>
+                        <li class="li"><a href="/app/inscription.php"  style="background-color: transparent;">INSCRIPTION D'ÉLÈVES</a></li>
                         <li class="li"><a href="/app/saisi.php" style="background-color: transparent;">SAISIR LES NOTES</a></li>
                         <li class="li"><a href="/app/calcul.php" style="background-color: transparent;">CALCULS</a></li>
                         <li class="li"><a href="/app/inprimer.php" style="background-color: transparent;">IMPRIMER</a></li>

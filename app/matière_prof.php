@@ -338,8 +338,8 @@
 
                                             <!-- Informatique & Technologies -->
                                             <section id="sec_technologie_information">
-                                                <input type="checkbox" class="matiere_check" id="input_technologie_information" value="Technologie de l'Information (TI)">
-                                                <label for="input_technologie_information">Technologie de l'Information (TI)</label>
+                                                <input type="checkbox" class="matiere_check" id="input_technologie_information" value="Informatique (TI)">
+                                                <label for="input_technologie_information">Informatique (TI)</label>
                                             </section>
                                             <section id="sec_informatique_generale">
                                                 <input type="checkbox" class="matiere_check" id="input_informatique_generale" value="Informatique Générale / TIC">

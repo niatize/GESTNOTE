@@ -28,7 +28,7 @@
                     <h3>FACILITER VOTRE VIE EN GÉRANT VOS NOTES SCOLAIRES SANS EFFORT</h3>
 Finie la corvée des bulletins scolaires. Avec GESTNOTE, calculez les moyennes et générez vos rapports en quelques
                      clics. Explorez la démo ou connectez-vous pour commencer !                    <div class="but">
-                        <button class="button" id="ifo_button">VOIR LA DÉMO</button>
+                        <button type="button" class="button" id="ifo_button" onclick="demo()">VOIR LA DÉMO</button>
                     </div>
                 </div>
             <div class="child child_2" id="content_1">
@@ -39,14 +39,14 @@ Finie la corvée des bulletins scolaires. Avec GESTNOTE, calculez les moyennes e
                     connectez-vous pour vivre une expérience inoubliable avec GestNote
                      <br>
                     <div class="but">
-                        <button class="button" id="connexion">SE CONNECTER</button>
+                        <button type="button" class="button" id="connexion" onclick="connexion()">SE CONNECTER</button>
                     </div>
                 </div>
                 <div class="child">
                     <h3>Contact</h3>
                     Pour plus dinformations ou pour un service ou encore pour l'aprentissage a l'utilisation de notres application, vous pouvez nous contacter.
                     <div class="but">
-                        <button class="button" id="contact">Nous contacter</button> 
+                        <button type="button" class="button" id="contact">Nous contacter</button> 
                     </div>
                 </div>
         </section><br><br>
@@ -60,7 +60,14 @@ Finie la corvée des bulletins scolaires. Avec GESTNOTE, calculez les moyennes e
                 © create by NI PRO DEV 
         </p>
     </footer>
+    <script>
+        const ifo_button = document.getElementById('ifo_button')
+ifo_button.addEventListener('click',()=>window.location.href="démo.php")
 
+function connexion () {window.location.href="connexion.php"}
+const contact = document.getElementById('contact')
+contact.addEventListener('click',()=> window.location.href="contact.php")
+    </script>
     <script src="JS/header.js" defer></script>
     <script src="JS/index.js" defer></script>
     <script src="JS/color_pages.js" defer></script>

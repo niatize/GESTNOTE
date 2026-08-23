@@ -1,6 +1,6 @@
 <?php    
          // creation d'une session pour voir la serie de l'utilisateur
-         session_start();
+session_start();
         include_once ("../data_base.php");
     if (isset($_SESSION["user_name"]) && isset($_SESSION["profil"]) ){
         $user_name = $_SESSION["user_name"];
@@ -59,7 +59,7 @@ if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"])
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GESTNOTE</title>
+    <title>Saisis des notes</title>
     <link rel="stylesheet" href="/app/css/all_style.css">
     <link rel="stylesheet" href="/app/css/all_style_responsive.css">
     <link rel="stylesheet" href="/app/css/acceuil.css">
@@ -84,7 +84,7 @@ if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"])
                     <ul id="ul" class="ul" style="background-color: transparent;">
                         <li id="li" class="li"><a href="/app/acceuil_app.php" style="background-color: transparent;">ACCEUIL</a></li>
                         <li class="li"><a href="/app/historique.php" style="background-color: transparent;">HISTORIQUE</a></li>
-                        <li class="li"><a href="/app/confection.php"  style="background-color: transparent;">CONTRÔLE DES BULLETINS</a></li>
+                        <li class="li"><a href="/app/inscription.php"  style="background-color: transparent;">INSCRIPTIONS D'ÉLÈVES</a></li>
                         <li class="li"><a href="/app/saisi.php" id="a" style="background-color: transparent;">SAISIR LES NOTES</a></li>
                         <li class="li"><a href="/app/calcul.php" style="background-color: transparent;">CALCULS</a></li>
                         <li class="li"><a href="/app/inprimer.php" style="background-color: transparent;">IMPRIMER</a></li>
@@ -126,7 +126,7 @@ if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"])
                 <--
             </div>
             <div class="position matier" onclick="show_class()" id="show_class" style="display: none;">
-                -->
+               -->
             </div>
             <?php 
                 for($i=0;$i<count($classes);$i++){
@@ -142,13 +142,31 @@ if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"])
                     for($j = 0;$j< count($matieres_bdd);$j++){
                             if($matiere_get[$i] === $matieres_bdd[$j]){
                                 $test = true;
+                                if($test){
+                                        echo '<div class="matier"><a id="ac" href="/app/saisi.php?'.http_build_query(['matiere_choix'=>htmlspecialchars($matiere_get[$i]),'classe_en_cours'=>$_GET["classe"]]).'">'.htmlspecialchars($matiere_get[$i]).'</a></div>';
+                                }
                             }
                     }
                 } 
-                if($test){
-                    for($i=0;$i<count($matiere_get);$i++){
-                        echo '<div class="matier"><a href="">'.htmlspecialchars($matiere_get[$i]).'</a></div>';
-                    }
+            ?>
+        </div>
+        <div class="input_note">
+            <?php 
+                if(isset($_GET["matiere_choix"]) && !empty($_GET["matiere_choix"])){
+
+                // on receuille la page active de l'utilisateur
+                    $_SESSION["classe_en_cours"] = $_GET["classe_en_cours"];
+                    $_SESSION["matiere_choix"] = $_GET["matiere_choix"];
+
+
+                    $matiere_choix = $_SESSION['matiere_choix'];
+                    $classe_en_cours = $_SESSION['classe_en_cours'];
+
+
+                    echo 'Vuillez saisir les notes des élèves de la  <strong id="strong">'.urldecode( $_GET["classe_en_cours"]).'</strong> dont la matière concerné est <strong>'.urldecode($_GET["matiere_choix"]).'</strong>';
+                    var_dump($matiere_choix,$classe_en_cours);
+                }else{
+                    echo "<p id="."p".">vous n'êtes affecter a aucune matière de cette classe</p>";
                 }
             ?>
         </div>

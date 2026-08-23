@@ -21,6 +21,7 @@
     <title>GESTNOTE</title>
     <link rel="stylesheet" href="/app/css/all_style.css">
     <link rel="stylesheet" href="/app/css/all_style_responsive.css">
+    <link rel="stylesheet" href="/app/css/inscription.css">
     <link rel="stylesheet" href="/app/css/acceuil.css">
     <script src="/app/js/header.js" defer></script>
     <script src="/app/js/color.js" defer></script>
@@ -41,7 +42,7 @@
                     <ul id="ul" class="ul" style="background-color: transparent;">
                         <li id="li" class="li"><a href="/app/acceuil_app.php"style="background-color: transparent;">ACCEUIL</a></li>
                         <li class="li"><a href="/app/historique.php" style="background-color: transparent;">HISTORIQUE</a></li>
-                        <li class="li"><a href="/app/confection.php" id="a"   style="background-color: transparent;">CONTRÔLE DES BULLETINS</a></li>
+                        <li class="li"><a href="/app/inscription.php" id="a" style="background-color: transparent;">INSCRIPTIONS D'ÉLÈVES</a></li>
                         <li class="li"><a href="/app/saisi.php" style="background-color: transparent;">SAISIR LES NOTES</a></li>
                         <li class="li"><a href="/app/calcul.php" style="background-color: transparent;">CALCULS</a></li>
                         <li class="li"><a href="/app/inprimer.php" style="background-color: transparent;">IMPRIMER</a></li>
@@ -62,25 +63,8 @@
 
         </div>
     </header>
-    <main id="main"><br>
-        <div class="content_2" id="content_2" style="position: relative;">
-            <span class="back" id="back">←</span>
-            <div class="profile" align="center">
-                <div class="user_log" align="center" style="background-color: transparent;"><img src="/image/telegram-svgrepo-com.svg" class="logo_profile" alt=""><br><input type="text" name="nom_user" id="" style="border: none;background-color: transparent;" placeholder="NOM UTILISATEUR"></div>
-                <div class="user_name"><span id="user_name"></span>
-                </div>
-            </div>
-            <div class="theme">
-
-                        <ul>
-                         <li id="moon" style="cursor: pointer;" class="thème">Thème sombre
-                        </li>
-                        <li id="sun" class="thème">thème clair
-                        </li>
-
-                    </ul>
-            </div>
-        </div>
+    <main id="main">
+        <?php include_once('div_2.php') ?>
         <div class="content_1" id="content_1">
 
         <h1>Hello word !!!</h1>
