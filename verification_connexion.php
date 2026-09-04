@@ -1,8 +1,12 @@
 <?php
     session_start();
-    require_once("data_base.php");// Chargement des fichiers de PHPMailer (Ajustez les chemins selon votre dossier)
-    include_once("vendor/autoload.php");
+    require_once("data_base.php");
+    $email_cript = "";
     try{
+        if(!isset($_SESSION["user_name"])){
+            header("location:connexion.php");
+            exit();
+        }
         if(isset($_SESSION["user_name"]) && !empty($_SESSION["user_name"] && isset($_SESSION["profil"]) && !empty($_SESSION['profil']))){
             $user_name = $_SESSION["user_name"];
             $logo = $_SESSION['profil'];
@@ -18,9 +22,6 @@
                     $email_cript[$i]="*";
                 }
             }
-        }else{
-            header("location:connexion.php");
-            exit();
         }
     }catch(PDOException $e){
         die("Erreur de la requette ala ligne :".$e->getLine()."message d'erreur :".$e->getMessage());

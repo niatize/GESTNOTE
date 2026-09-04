@@ -5,20 +5,20 @@ const calcul = document.getElementById('calcul')
 const imprimer = document.getElementById('imprimer')
 const resultat = document.getElementById('resultat')
 historique.addEventListener('click',(e)=>{
-    window.location.href="/app/historique.php"
+    window.location.href="historique.php"
 })
 controle.addEventListener('click',(e)=>{
-    window.location.href="/app/confection.php"
+    window.location.href="inscription.php"
 })
 saisis.addEventListener('click',(e)=>{
-    window.location.href="/app/saisi.php"
+    window.location.href="saisi.php"
 })
 calcul.addEventListener('click',(e)=>{
-    window.location.href="/app/calcul.php"
+    window.location.href="suivis.php"
 })
 imprimer.addEventListener('click',(e)=>{
-    window.location.href="/app/inprimer.php"
+    window.location.href="inprimer.php"
 })
 resultat.addEventListener('click',(e)=>{
-    window.location.href="/app/parent.php"
+    window.location.href="parent.php"
 })

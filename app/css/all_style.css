@@ -5,6 +5,17 @@
     color: black;
     box-sizing: border-box;
 }
+:root{
+ --header:#0f172a;
+ --h1:#04C5F5;
+ --content:#EBEBEB;
+ --button-redirection:#18DA6F;
+ --h3:#0056B3;
+ --hover-shadow:#0037FF;
+ --classe_style:#059668d9;
+ --th_backgrount:#3885F8;
+ --srong_color:#DAA520;
+}
     /* pour fixer et styliser mon header */
 header{
     position: sticky;
@@ -19,17 +30,21 @@ header{
     z-index: 3;
     box-sizing: border-box;
 }
-header,footer{
+.black header,.black footer,footer{
     backdrop-filter: blur(10px);
-        background-color: #ffffffe5;
+    background-color: var(--header);
+    color: white;
+    backdrop-filter: blur(50px);
     }
         /* style pour personnaliser le logo */
-.header_parent{
+.header_parent,.back .header_parent{
     padding: 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--header);
+    color: white;
 }
 .headerlogo{
     width: 20%;
@@ -98,6 +113,7 @@ a{
     width: fit-content;
     background-color: transparent;
     box-sizing: border-box;
+    color:white;
 }
 a::before{
     content: '';
@@ -134,7 +150,7 @@ a:hover{
     top: 0;
 }
 .burger{
-    background-color: black;
+    background-color: white;
     height: 5px;
     width: 70px;
     border-radius: 20px;
@@ -146,6 +162,7 @@ a:hover{
     justify-content: space-around;
     height: 50px;
     width: fit-content;
+    
 }
 .burger_1{
         display: none;
@@ -194,10 +211,10 @@ li{
     background-color: transparent;
 }
 a:hover{
-    color: goldenrod;
+    color: #0056B3;
 }
  #a{
-    color: goldenrod;
+    color: #0056B3;
 }
 #a::before{
     content: '';
@@ -211,6 +228,7 @@ a:hover{
     left: 40px;
     width: 100%;
     font-size: xx-large;
+    color: white;
 }
 span{
     color: #00a2ff;
@@ -236,7 +254,7 @@ h3{
 .black 
 h3{
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     font-weight: bolder;
     color: #0056b3;
     font-weight: bolder;
@@ -245,13 +263,45 @@ h3{
 .footer_container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     text-align: center;
     box-sizing: border-box;
 }
-footer{
-    padding: 20px;
-    box-shadow: 0 0 2px 1px;
+footer,.div{
     box-sizing: border-box;
+    color: white;
+}
+footer{
+    padding: 6px;
+}
+.black .div{
+    background-color: transparent;
+}
+.black .footer_container,.black .texte{
+    background-color: transparent;
+}
+.div a{
+    background-color: transparent;
+}
+.black .header_parent,.black .auther{
+    background-color: var(--header);
+}
+.black .footer_logo{
+    background-color: transparent;
+}
+.black a{
+    background-color: transparent;
+}
+.black li{
+    background-color: transparent;
+}
+.black .logo_name{
+    background-color: transparent;
+}
+.black .headerlogo{
+    background-color: transparent;
+}
+#texte{
+    color: white;
 }

@@ -3,6 +3,11 @@
         "yandeu.five-server",
         "phu1237.live-reload",
         "wscats.cors-browser",
-        "google.gemini-cli-vscode-ide-companion"
+        "google.gemini-cli-vscode-ide-companion",
+        "teodorovillanueva.php-live-server",
+        "ark-platforms-inc.ark-live-server",
+        "brapifra.phpserver",
+        "zhouzhipeng.liveserverpp",
+        "bmewburn.vscode-intelephense-client"
     ]
 }

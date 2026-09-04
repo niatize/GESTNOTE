@@ -1,7 +1,9 @@
-<?php    
-         // creation d'une session pour voir la serie de l'utilisateur
-         session_start();
+<?php  
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
+$user_name = "" ;
     if (isset($_SESSION["user_name"]) && isset($_SESSION["profil"]) ){
         $user_name = $_SESSION["user_name"];
         $profil= $_SESSION['profil'];
@@ -20,16 +22,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GESTNOTE</title>
-    <link rel="stylesheet" href="/app/css/all_style.css">
-    <link rel="stylesheet" href="/app/css/all_style_responsive.css">
-    <link rel="stylesheet" href="/app/css/acceuil.css">
-    <link rel="stylesheet" href="/app/css/acceul_responsive.css">
-    <script src="/app/js/header.js" defer></script>
-    <script src="/app/js/color.js" defer></script>
-    <script src="/app/js/acceuille.js" defer></script>
+    <link rel="stylesheet" href="css/all_style.css">
+    <link rel="stylesheet" href="css/all_style_responsive.css">
+    <link rel="stylesheet" href="css/acceuil.css">
+    <link rel="stylesheet" href="css/acceul_responsive.css">
+    <script src="js/header.js" defer></script>
+    <script src="js/color.js" defer></script>
+    <script src="js/acceuille.js" defer></script>
 </head>
 <body>
-    <?php require("header.php") ?>
+    <header>
+        <div class="header_parent">
+            <div class="headerlogo">
+                <span class="logo_div gap">
+                    <img src="../image/logo.png" class="logo" alt="">
+                </span>
+                <div class="logo_name gap">GESTNOTE</div>
+            </div>
+            <div class="auther" id="auther">
+
+            <div class="nav_bar" id="nav_bar" style="background-color: transparent;">
+                <nav id="nav" style="background-color: transparent;">
+                    <ul id="ul" class="ul" style="background-color: transparent;">
+                        <li id="li" class="li"><a href="acceuil_app.php" id="a" style="background-color: transparent;">ACCEUIL</a></li>
+                        <li class="li"><a href="historique.php" style="background-color: transparent;">HISTORIQUE</a></li>
+                        <li class="li"><a href="inscription.php"  style="background-color: transparent;">INSCRIPTION D'ÉLÈVES</a></li>
+                        <li class="li"><a href="saisi.php" style="background-color: transparent;">SAISIR LES NOTES</a></li>
+                        <li class="li"><a href="suivis.php" style="background-color: transparent;">SUIVIS DES NOTES</a></li>
+                        <li class="li"><a href="inprimer.php" style="background-color: transparent;">IMPRIMER</a></li>
+                        <li class="li"><a href="parent.php" style="background-color: transparent;">RESULTAT</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="user_profile" id="user_profile" style="background-color: transparent;">
+                <div class="user_logo" style="background-color: transparent;"><img src="<?php echo htmlspecialchars("../".$profil) ?>" class="logo_profile" alt="" style="background-color: transparent;" na></div>
+                <div class="user_name" style="background-color: transparent;"><?php echo $user_name; ?></div>
+            </div>
+            </div>
+            <div class="menue_burger" id="menue_burger">
+                <div class="burger" id="burger_1"></div>
+                <div class="burger" id="burger_2"></div>
+                <div class="burger" id="burger_3"></div>
+            </div>
+
+        </div>
+    </header>
     <main id="main">
         <?php include'div_2.php' ?>
         <div class="content_1" id="content_1">
@@ -37,10 +74,10 @@
             <div class="slider_parent">
                 <div class="slider_child">
                     <div class="slider_image">
-                        <img src="/image/logo.png" alt="" class="image_slide">
-                        <img src="/app/img/images_2.jpeg" alt="" class="image_slide">
-                        <img src="/app/img/images_3.jpeg" alt="" class="image_slide">
-                        <img src="/image/OriceftStudents3.png" alt="" class="image_slide">
+                        <img src="../image/logo.png" alt="" class="image_slide">
+                        <img src="img/images_2.jpeg" alt="" class="image_slide">
+                        <img src="img/images_3.jpeg" alt="" class="image_slide">
+                        <img src="../image/OriceftStudents3.png" alt="" class="image_slide">
                     </div>
                 </div>
             </div>
@@ -53,9 +90,9 @@
                 </div>
 
                 <div class="content" id="id">
-                    <h3>Contrôle des bulletins</h3>
-                    Dans cette partie de l'aplications, vous pouvez visualiser la suivis et la mise en forme progressive des bulletins. Ainsi, cellon le délais, vous pouvez visualiser les erreurs de retard de la saisis des notes par les professeurs et leurs faires part. Ici, une liste complete qui récapitule les bulletins collective par classe est distribué.<br>
-                    <button class="button" id="controle">Aller au contrôle</button>
+                    <h3>Inscription</h3>
+                        Dans cette partie, vous alez la possibilité d'inscrires, modifier les élèves dans la base de données
+                    <button class="button" id="controle">Inscrire des élèves</button>
                 </div>
                 
                 <div class="content">
@@ -65,9 +102,9 @@
                 </div>
                 
                 <div class="content">
-                    <h3>Calcul</h3>
-                    Actualiser régulièrement le serveur afin de mettre a jour le calcul automatique des bulletins. Ici, vous avez la posibilité de voir les élèves et les salles de classes dont les notes n'ont pas été attribué pendant une séquance. <br>
-                    <button class="button" id="calcul">Aller au calcul</button>
+                    <h3>Suivis</h3>
+                        Accédez au tableau de bord pour superviser la saisie des notes par les professeurs, identifier immédiatement les retards de soumission et vous assurer que chaque enseignant respecte les délais de la feuille de route.
+                    <button class="button" id="calcul">Suivre la saisis</button>
                 </div>
                 
                 <div class="content">

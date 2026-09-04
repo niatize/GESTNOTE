@@ -1,6 +1,7 @@
 <?php    
-         // creation d'une session pour voir la serie de l'utilisateur
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
         include_once ("../data_base.php");
     if (isset($_SESSION["user_name"]) && isset($_SESSION["profil"]) ){
         $user_name = $_SESSION["user_name"];
@@ -9,7 +10,7 @@ session_start();
         $tab_name = explode(" ",$user_name);
         $user_name = $tab_name[0];
     }else{
-        $user_name = "Mon profil";
+        header('location: ../connexion.php');
     }
     try {
         $sql = $pdo->prepare("SELECT * FROM user WHERE full_name = :nom");
@@ -29,7 +30,7 @@ session_start();
             $matieres = explode('+',$user_info['matieres']);
 if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"]) && !empty($_GET['matiere'])) {
     $classe = $_GET["classe"];
-    $matiere = $_GET["matiere"];
+    $matiere = urldecode($_GET["matiere"]);
     $matiere_get = explode(', ',$matiere);
     try {
         $sql = $pdo->prepare('SELECT id_class FROM classe WHERE nom = :nom');
@@ -37,8 +38,8 @@ if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"])
         $id_classe = $sql->fetchColumn();
 
         if ($id_classe) {
-            $sql = $pdo->prepare("
-            SELECT nom
+            $sql = $pdo->prepare
+            ("SELECT nom
             FROM matiere
             INNER JOIN matiere_coeff ON matiere_coeff.id_mat = matiere.id_mat
             WHERE matiere_coeff.id_class = :id_class
@@ -60,12 +61,12 @@ if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"])
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saisis des notes</title>
-    <link rel="stylesheet" href="/app/css/all_style.css">
-    <link rel="stylesheet" href="/app/css/all_style_responsive.css">
-    <link rel="stylesheet" href="/app/css/acceuil.css">
-    <link rel="stylesheet" href="/app/css/saisis.css">
-    <script src="/app/js/header.js" defer></script>
-    <script src="/app/js/color.js" defer></script>
+    <link rel="stylesheet" href="css/all_style.css">
+    <link rel="stylesheet" href="css/all_style_responsive.css">
+    <link rel="stylesheet" href="css/acceuil.css">
+    <link rel="stylesheet" href="css/saisis.css">
+    <script src="js/header.js" defer></script>
+    <script src="js/color.js" defer></script>
 </head>
 <body>
 
@@ -73,7 +74,7 @@ if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"])
         <div class="header_parent">
             <div class="headerlogo">
                 <span class="logo_div gap">
-                    <img src="/image/logo.png" class="logo" alt="">
+                    <img src="../image/logo.png" class="logo" alt="">
                 </span>
                 <div class="logo_name gap">GESTNOTE</div>
             </div>
@@ -82,18 +83,18 @@ if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"])
             <div class="nav_bar" id="nav_bar" style="background-color: transparent;">
                 <nav id="nav" style="background-color: transparent;">
                     <ul id="ul" class="ul" style="background-color: transparent;">
-                        <li id="li" class="li"><a href="/app/acceuil_app.php" style="background-color: transparent;">ACCEUIL</a></li>
-                        <li class="li"><a href="/app/historique.php" style="background-color: transparent;">HISTORIQUE</a></li>
-                        <li class="li"><a href="/app/inscription.php"  style="background-color: transparent;">INSCRIPTIONS D'ÉLÈVES</a></li>
-                        <li class="li"><a href="/app/saisi.php" id="a" style="background-color: transparent;">SAISIR LES NOTES</a></li>
-                        <li class="li"><a href="/app/calcul.php" style="background-color: transparent;">CALCULS</a></li>
-                        <li class="li"><a href="/app/inprimer.php" style="background-color: transparent;">IMPRIMER</a></li>
-                        <li class="li"><a href="/app/parent.php" style="background-color: transparent;">RESULTAT</a></li>
+                        <li id="li" class="li"><a href="acceuil_app.php" style="background-color: transparent;">ACCEUIL</a></li>
+                        <li class="li"><a href="historique.php" style="background-color: transparent;">HISTORIQUE</a></li>
+                        <li class="li"><a href="inscription.php"  style="background-color: transparent;">INSCRIPTIONS D'ÉLÈVES</a></li>
+                        <li class="li"><a href="saisi.php" id="a" style="background-color: transparent;">SAISIR LES NOTES</a></li>
+                        <li class="li"><a href="suivis.php" style="background-color: transparent;">SUIVIS DES NOTES</a></li>
+                        <li class="li"><a href="inprimer.php" style="background-color: transparent;">IMPRIMER</a></li>
+                        <li class="li"><a href="parent.php" style="background-color: transparent;">RESULTAT</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="user_profile" id="user_profile" style="background-color: transparent;">
-                <div class="user_logo" style="background-color: transparent;"><img src="<?php echo htmlspecialchars("/".$profil) ?>" class="logo_profile" alt="" style="background-color: transparent;" na></div>
+                <div class="user_logo" style="background-color: transparent;"><img src="<?php echo htmlspecialchars("../".$profil) ?>" class="logo_profile" alt="" style="background-color: transparent;"></div>
                 <div class="user_name" style="background-color: transparent;"><?php echo $user_name; ?></div>
             </div>
             </div>
@@ -108,70 +109,172 @@ if (isset($_GET["classe"]) && !empty($_GET['classe']) && isset($_GET["matiere"])
     <main id="main">
         <?php include_once('div_2.php') ?>
         <div class="content_1" id="content_1" style="position: relative;" >
-            <h1>
-            <?php 
-                $series = explode(",",$user_info["serie"]);
-                if($series[1] !== null){
-                echo '<div class="generale div" id="generale">'.$series[0].'</div>';
-                echo "<hr>";
-                echo '<div class="technique div">'.$series[1].'</div>';
-                }elseif($series[1]==null && $series[0]!==null){
+                <h1>
+                <?php 
+                    $series = explode(",",$user_info["serie"]);
+                    if($series[1] !== null){
                     echo '<div class="generale div" id="generale">'.$series[0].'</div>';
-                }
-            ?>
-        </h1>
-        <div class="classes class">
-
-            <div class="position matier" onclick="hidden_class()" id="hidden_class">
-                <--
-            </div>
-            <div class="position matier" onclick="show_class()" id="show_class" style="display: none;">
-               -->
-            </div>
-            <?php 
-                for($i=0;$i<count($classes);$i++){
-                    $classe = trim($classes[$i]);
-                    echo '<div class="classe class"><a href="/app/saisi.php?'.http_build_query(["classe"=>$classe,"matiere" => $matieres[$i]]).'">'.$classes[$i].'</a></div>';
-                }
-            ?>
-        </div>
-        <div class="matiere" id="matiere">
-            <?php
-                $test = false;
-                for($i = 0; $i<count($matiere_get);$i++){
-                    for($j = 0;$j< count($matieres_bdd);$j++){
-                            if($matiere_get[$i] === $matieres_bdd[$j]){
-                                $test = true;
-                                if($test){
-                                        echo '<div class="matier"><a id="ac" href="/app/saisi.php?'.http_build_query(['matiere_choix'=>htmlspecialchars($matiere_get[$i]),'classe_en_cours'=>$_GET["classe"]]).'">'.htmlspecialchars($matiere_get[$i]).'</a></div>';
-                                }
-                            }
+                    echo "<hr>";
+                    echo '<div class="technique div">'.$series[1].'</div>';
+                    }elseif($series[1]==null && $series[0]!==null){
+                        echo '<div class="generale div" id="generale">'.$series[0].'</div>';
                     }
-                } 
-            ?>
-        </div>
-        <div class="input_note">
-            <?php 
-                if(isset($_GET["matiere_choix"]) && !empty($_GET["matiere_choix"])){
+                ?>
+            </h1>
+            <div class="classes class"><br>
+                <?php 
+                    for($i=0;$i<count($classes);$i++){
+                        $classe = trim($classes[$i]);
+                        echo '<div class="classe"><a id="'.htmlspecialchars($classe).'" href="saisi.php?classe='.htmlspecialchars($classe).'&matiere='.urlencode($matieres[$i]).'">'.$classes[$i].'</a></div>';
+                    }
+                ?><br>
+            </div>
+            <div class="matiere" id="matiere">
+                <?php
+                    $test = false;
+                    // filtrage et affichege des matières selon la classe choisis
+                    for($i = 0; $i<count($matiere_get);$i++){
+                        for($j = 0;$j< count($matieres_bdd);$j++){
+                                if(trim($matiere_get[$i]) === trim($matieres_bdd[$j])){
+                                    $test = true;
+                                    if($test){
+                                            echo '<div class="matier"><a id="ac" href="saisi.php?'.http_build_query(['matiere_choix'=>htmlspecialchars($matiere_get[$i]),'classe_en_cours'=>$_GET["classe"]]).'">'.htmlspecialchars($matiere_get[$i]).'</a></div>';
+                                    }
+                                }
+                        }
+                    } 
+                ?>
+            </div>
+            <div class="input_note">
+                <?php 
+                    if (isset($_GET["matiere_choix"]) && !empty($_GET["matiere_choix"])) {
+                        // L'utilisateur a choisi sa matière : on enregistre en session
+                        $_SESSION["classe_en_cours"] = $_GET["classe_en_cours"];
+                        $_SESSION["matiere_choix"] = $_GET["matiere_choix"];
 
-                // on receuille la page active de l'utilisateur
-                    $_SESSION["classe_en_cours"] = $_GET["classe_en_cours"];
-                    $_SESSION["matiere_choix"] = $_GET["matiere_choix"];
-
-
-                    $matiere_choix = $_SESSION['matiere_choix'];
-                    $classe_en_cours = $_SESSION['classe_en_cours'];
-
-
-                    echo 'Vuillez saisir les notes des élèves de la  <strong id="strong">'.urldecode( $_GET["classe_en_cours"]).'</strong> dont la matière concerné est <strong>'.urldecode($_GET["matiere_choix"]).'</strong>';
-                    var_dump($matiere_choix,$classe_en_cours);
-                }else{
-                    echo "<p id="."p".">vous n'êtes affecter a aucune matière de cette classe</p>";
-                }
-            ?>
-        </div>
+                        echo '<div>Veuillez saisir les notes des élèves de la <strong>' . htmlspecialchars($_GET["classe_en_cours"]) . '</strong> dont la matière concernée est <strong>' . htmlspecialchars($_GET["matiere_choix"]) . '</strong></div>';
+                    } 
+                    elseif (isset($_GET["classe"]) && !$test) {
+                        // Le message s'affiche UNIQUEMENT si l'utilisateur vient de choisir une classe ET qu'aucune matière n'a été trouvée
+                        echo '<div id="p">Vous n\'êtes affecté à aucune matière de cette classe</div>';
+                    }
+                ?>
+            </div>
+            <div id="insertion_de_note">
+               <form action="" method="post">
+                     <?php 
+                        if (isset($_GET["matiere_choix"]) && !empty($_GET["matiere_choix"]) && isset($_GET["classe_en_cours"]) && !empty($_GET["classe_en_cours"])) {
+                            $classe_en_cours = $_SESSION["classe_en_cours"];
+                            $matiere_choisis = $_SESSION["matiere_choix"];
+                            try{
+                                $sql = $pdo->prepare(
+                                    "SELECT nom_complet
+                                    FROM eleve
+                                    WHERE nom_classe = :classe_en_cours
+                                    ORDER BY nom_complet ASC
+                                    ");
+                                $sql->execute(["classe_en_cours"=>$classe_en_cours]);
+                                $eleves_info = $sql->fetchAll(PDO::FETCH_ASSOC);
+                                echo ' <table border>
+                                        <tr>
+                                            <th rowspan="2" class="n">N°</th>
+                                            <th rowspan="2" class="nom">NOM</th>
+                                            <th colspan="2" class="note">NOTE</th>
+                                        </tr>
+                                        <tr>
+                                        <th class="cc">CC</th>
+                                        <th class="eval">EVAL</th>
+                                        </tr>';
+                            for($i=0;$i<count($eleves_info);$i++){
+                                echo '
+                                    <tr>
+                                        <td align="center">'.($i+1).'</td>
+                                        <td><input type="text" value="'.htmlspecialchars($eleves_info[$i]["nom_complet"]).'"name="nom_eleve[]" style="padding: 3px;font-size:large;border:none" readonly></td>
+                                        <td><input type="number" pattern="[0.25-9]"name="cc[]" required></td>
+                                        <td><input type="number"pattern="[0.25-9]" name="eval[]" required></td>
+                                    </tr>';
+                            }
+                                echo '
+                                    </table>
+                                    <div class="submit_div"><button type="submit" name="send" class="btn-submit">
+                                            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="blue" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                                                <polyline points="17 21 17 13 7 13 7 21"/>
+                                                <polyline points="7 3 7 8 15 8"/>
+                                            </svg>
+                                            Enregistrer les notes
+                                        </button>
+                                    </div>';
+                            }catch(PDOException $e){
+                                die('ERROR :: '.$e->getMessage());
+                            }
+                        }
+                    ?> 
+                         <!-- creation du tableau qui vas récupérer les notres des éléves -->
+                   
+               </form>
+            </div>
         </div>
     </main>
-    <script src="js/saisis.js" defer></script>
+    <footer>
+        <?php require_once "footer.php" ?>
+    </footer>
 </body>
 </html>
+        <!-- option d'envoie des notes saisis -->
+    <?php 
+    // gestion de couleur sur la classe active
+    echo    '<script>
+                const div = document.getElementById("'.$classe_en_cours.'")
+                div.style.backgroundColor = "goldenrod"
+            </script>';
+        if($_SERVER["REQUEST_METHOD"]=="POST" && isset($_SERVER["REQUEST_METHOD"]) && isset($_POST["send"])){
+            if(isset($_POST["nom_eleve"]) && 
+            !empty($_POST["nom_eleve"]) && 
+            isset($_POST["cc"]) && 
+            !empty($_POST["cc"])  && 
+            isset($_POST["eval"]) && 
+            !empty($_POST["eval"])){
+                $nom_eleve = $_POST["nom_eleve"];
+                $cc = $_POST["cc"];
+                $eval = $_POST["eval"];
+                //récupération de l'identifiant de la matière en question
+                try{
+                    $sql = $pdo->prepare("SELECT
+                    id_mat
+                    FROM matiere
+                    WHERE matiere.nom = :matiere_choisis");
+                    $sql->execute(["matiere_choisis"=>$matiere_choisis]);
+                    $id_matiere = $sql->fetch(PDO::FETCH_ASSOC);
+                    $id_matiere = $id_matiere["id_mat"];
+                    //insertion des notes en base de données
+                    //récupération de l'identifiant de l'élève;
+                    for($i=0;$i<count($nom_eleve);$i++){
+                    $sql = $pdo->prepare("SELECT id_eleve FROM eleve WHERE nom_complet = :nom_complet");
+                    $sql->execute(["nom_complet"=>$nom_eleve[$i]]);
+                    $id_eleve = $sql->fetch(PDO::FETCH_ASSOC);
+                    // insertion des données  dans la table
+                        $sql = $pdo->prepare("INSERT INTO
+                                        notes(id_mat,note_cc,note_eval,id_eleve)
+                                        VALUES(:id_mat,:note_cc,:note_eval,:id_eleve)
+                                        ");
+                        $sql->execute(["id_mat"=> $id_matiere,
+                                        "note_cc"=> (float) $cc[$i],
+                                        "note_eval"=>(float) $eval[$i],
+                                        "id_eleve"=>$id_eleve["id_eleve"]
+                                        ]);
+
+                    }
+                echo '<script>alert("les notres ont bien étés envoyé")</script>';
+                }catch(PDOException $e){
+                    die("ERROR : ".$e->getMessage());
+                }
+
+            }
+        }
+        if(isset($_POST["send"])&& empty($_POST["cc"])  && empty($_POST["eval"])){
+            echo '<script>alert("Veuillez remplir toutes les notes avant d\'envoyer")</script>';
+        }
+    
+    
+    ?>

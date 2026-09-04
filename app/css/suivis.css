@@ -1,0 +1,46 @@
+#matiere,.statuts_contener,.black .statuts_contener{
+    background-color: var(--header);
+    padding: 10px;
+    padding-top: 35px;
+    height: 150px;
+    display: flex;
+    align-items: start;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.statuts_contener{
+    background-color: transparent;
+    width: 80%;
+    display: flex;
+    position: absolute;
+    top: 241px;
+    right: 0;
+    overflow-x: scroll;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    overflow-wrap: break-word;
+}
+.black .filtre{
+    background-color: transparent;
+}
+.black input,.black select{
+    background-color: white;
+    color: black;
+    padding: 5px;
+    font-size: larger;
+    border: none;
+    border-radius: 3px;
+}
+#submit{
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+}
+span{
+    position: absolute;
+    top:10px;
+    padding-bottom:50px;
+    font-weight: bolder;
+    font-size: larger;
+}

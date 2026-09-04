@@ -1,9 +1,8 @@
-
 <?php
-    session_start();
+session_start();
     include_once("data_base.php");
 
-    if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST["envoyer"])) {
+if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["envoyer"])) {
 
         if(isset($_POST["user_name"]) && $_POST["password"]) {
             if(!empty($_POST["password"]) && !empty($_POST["user_name"])) {
@@ -14,10 +13,11 @@
                     $sql = $pdo->prepare("SELECT full_name,pass_word,profil FROM user WHERE full_name = :full_name");
                     $sql->execute(array("full_name"=>$user_name));
                     $user = $sql->fetch(PDO::FETCH_ASSOC);
-                    if($user["full_name"]== $user_name && password_verify($password,$user["pass_word"])){
+                    if($user && password_verify($password,$user["pass_word"])){
                     $_SESSION["user_name"] = $user_name;
                     $_SESSION["profil"] = $user['profil'];    
-                    header("location:verification_connexion.php");
+                    session_write_close();
+                    header('location: verification_connexion.php');
                         exit();
                     }else{
                         echo " <script> alert('Echec!!: Nom d\'utilisateur ou mot de passe incorrect')</script>";
@@ -51,9 +51,7 @@
         <?php require_once("header.php") ?>
      </header>
     <main>
-    <div class="content_1" id="contenue_1" nitialisation de 1 sept. sur 01:00
-    41 %
-    utilisé>
+    <div class="content_1" id="contenue_1">
             <fieldset class="fieldset">
                 <legend align="center" style="border-radius: 50%;">
                     <svg xmlns="http://www.w3.org/2000/svg" class="svg"
@@ -109,11 +107,9 @@
 
 
     <script src="JS/header.js" defer></script>
-    <script src="JS/index.js" defer></script>
     <script src="JS/color_pages.js" defer></script>
     <script src="JS/connexion.js" defer></script>
     <script src="JS/script.js"></script>
     <script src="JS/password.js"></script>
-    <script src="JS/inscription.js"></script>
 </body>
 </html>

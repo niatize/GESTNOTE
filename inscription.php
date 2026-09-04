@@ -84,7 +84,7 @@ if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['submit'])){
                 if($statut === "Administrareur" || $statut === "Élève"){
                     header('location: connexion.php');
                 }else if($statut === "Professeur"){
-                    header("location: ../app/matière_prof.php");
+                    header("location: app/matière_prof.php");
                 }
                 exit();
 
@@ -182,7 +182,7 @@ if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['submit'])){
                         <fieldset>
                             <legend align="center">ETAPE <span style="color: gold;">3</span>/3</legend>
                             <table>
-                                <tbody>eleve
+                                <tbody>
                                     <tr id="profile_input">
                                         <td>choisir une photo de Profile</td>
                                         <td><input type="file" accept="image/*" name="logo_profile" id="logo_profile_input" required></td>

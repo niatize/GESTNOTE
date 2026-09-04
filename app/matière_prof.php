@@ -1,6 +1,8 @@
 
 <?php
-        session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
         include_once'../data_base.php';
         if(isset($_SESSION['name']) && !empty($_SESSION['name'])){
             $name = $_SESSION['name'];
@@ -338,8 +340,8 @@
 
                                             <!-- Informatique & Technologies -->
                                             <section id="sec_technologie_information">
-                                                <input type="checkbox" class="matiere_check" id="input_technologie_information" value="Informatique (TI)">
-                                                <label for="input_technologie_information">Informatique (TI)</label>
+                                                <input type="checkbox" class="matiere_check" id="input_technologie_information" value="Informatique">
+                                                <label for="input_technologie_information">Informatique</label>
                                             </section>
                                             <section id="sec_informatique_generale">
                                                 <input type="checkbox" class="matiere_check" id="input_informatique_generale" value="Informatique Générale / TIC">
