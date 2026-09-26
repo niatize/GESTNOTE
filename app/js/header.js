@@ -27,7 +27,6 @@ theme.forEach(theme => {
     )
 });
 
-
         // pour afficher le profile et le thème de l'utilisateur
 
 const user_profile = document.getElementById('user_profile')

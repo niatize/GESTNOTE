@@ -1,11 +1,6 @@
-<?php    
-
-
-
-        $profil = "";
-?>        
+   
         <div class="content_2" id="content_2" style="position: relative;"><br>
-            <span class="back" id="back"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8333333333333333" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></span>
+            <span class="back" id="back"><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8333333333333333" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></a></span>
             <div class="profile" align="center">
                 <div class="user_log" align="center" style="background-color: transparent;"><img src="<?php echo htmlspecialchars("../".$profil) ?>" name="logo_profile" class="logo_profile" alt=""><br>
                    <span style="border: none;background-color: transparent;font-size: 40px;"><?php echo htmlspecialchars($user_name)?></span></div>
@@ -20,5 +15,5 @@
                         </li>
 
                     </ul>
-            </div>
+            </div><br><br>
         </div>

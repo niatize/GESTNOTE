@@ -1,0 +1,193 @@
+
+/* ==========================================================================
+   GESTNOTE - Saisis Responsive CSS
+   ========================================================================== */
+
+/* --- TABLETTES ET PETITS ECRANS (Max-width: 1024px) --- */
+@media screen and (max-width: 1024px) {
+
+    .content_1 {
+        display: flex !important;
+        flex-direction: column !important;
+        position: static !important;
+        width: 100% !important;
+        min-height: auto !important;
+    }
+
+    /* Redimensionnement de la sidebar des classes en barre horizontale */
+    .classes, .black .classes {
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: 120px !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        position: static !important;
+        padding: 10px !important;
+        gap: 10px !important;
+        justify-content: flex-start !important;
+    }
+
+    .classe, .black .classe {
+        width: auto !important;
+        flex-shrink: 0 !important;
+    }
+
+    .classe a, .black .classe a {
+        white-space: nowrap !important;
+        padding: 8px 16px !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* Barre des matières sous les classes */
+    .matiere {
+        position: static !important;
+        width: 100% !important;
+        padding: 10px 15px !important;
+        justify-content: flex-start !important;
+    }
+
+    /* Message d'information */
+    .input_note, .black .input_note {
+        position: static !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 5px 15px !important;
+    }
+
+    /* Zone principale du tableau */
+    #insertion_de_note, .black #insertion_de_note {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        padding: 10px 15px !important;
+    }
+}
+
+
+/* --- MOBILES ET PETITS APPAREILS (Max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+
+    /* Barre Séquence et Recherche sur 2 lignes */
+    .barre_sequence_recherche {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        padding: 10px !important;
+    }
+
+    .select_seq_block {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+    }
+
+    .select_seq_block select {
+        flex-grow: 1 !important;
+        max-width: 180px !important;
+    }
+
+    .search_block {
+        width: 100% !important;
+    }
+
+    .search_block input,
+    .search_block .input_search {
+        width: 100% !important;
+    }
+
+    /* CONTENEUR DU TABLEAU : Scroll X forcé */
+    #insertion_de_note, .black #insertion_de_note {
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: scroll !important; /* Force la barre de défilement horizontal */
+        -webkit-overflow-scrolling: touch;
+        padding: 5px !important;
+        display: block !important;
+        box-sizing: border-box !important;
+    }
+
+    form {
+        width: 100% !important;
+    }
+
+    /* TABLEAU : Largeur fixe réelle pour activer le défilement */
+    #insertion_de_note table, 
+    .black #insertion_de_note table {
+        width: 850px !important;
+        min-width: 850px !important;
+        max-width: none !important;
+        table-layout: fixed !important;
+    }
+
+    /* Largeurs par colonne */
+    .n { width: 50px !important; }
+    .nom { width: 320px !important; } /* Espace large pour afficher les noms complets */
+    .cc { width: 110px !important; } /* Espace large pour saisir la note CC */
+    .eval { width: 110px !important; }/* Espace large pour saisir la note EVAL */
+    .seq_col, .note { width: 160px !important; }
+
+    th, td {
+        padding: 8px 6px !important;
+        font-size: 0.9rem !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+    }
+
+    /* Style des inputs dans le tableau */
+    #insertion_de_note table input, 
+    .black #insertion_de_note table input {
+        font-size: 0.9rem !important;
+        padding: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        background-color: transparent !important;
+    }
+
+    /* Alignement des noms à gauche et des notes au centre */
+    #insertion_de_note table td input[name="nom_eleve[]"] {
+        text-align: left !important;
+    }
+
+    #insertion_de_note table td input[name="cc[]"],
+    #insertion_de_note table td input[name="eval[]"] {
+        text-align: center !important;
+    }
+
+    /* Bouton d'enregistrement */
+    .submit_div {
+        width: 100% !important;
+    }
+
+    [type="submit"] {
+        width: 100% !important;
+        justify-content: center !important;
+        font-size: 0.95rem !important;
+        padding: 12px 15px !important;
+    }
+}
+
+
+/* --- APPAREILS TRES ETROITS (Max-width: 480px) --- */
+@media screen and (max-width: 480px) {
+
+    .matier a {
+        padding: 8px 14px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .select_seq_block label,
+    .select_seq_block select {
+        font-size: 0.85rem !important;
+    }
+
+    /* Garantit que le tableau conserve ses 850px même sur les écrans très étroits */
+    #insertion_de_note table {
+        width: 850px !important;
+        min-width: 850px !important;
+    }
+}

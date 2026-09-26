@@ -177,11 +177,11 @@ if (session_status() === PHP_SESSION_NONE) {
                             <tbody>
                                 <tr>
                                     <th>NOM COMPLET</th>
-                                    <td><input type="text" name="nom" class="nom"></td>
+                                    <td><input type="text" name="nom" class="nom" placeholder="Entrez le nom complet"></td>
                                 </tr>
                                 <tr>
                                     <th>classe</th>
-                                    <td><input type="text" name="classe" list="classes_list" id="">
+                                    <td><input type="text" name="classe" list="classes_list" id="" placeholder="Sélectionnez ou saisissez la classe">
                                         <datalist id="classes_list">
                                             <option value="Sixième">Sixième</option>
                                             <option value="Cinquième">Cinquième</option>
@@ -303,7 +303,7 @@ if (session_status() === PHP_SESSION_NONE) {
                                 </tr>
                                 <tr>
                                     <th>MATRICULE</th>
-                                    <td><input type="text" name="matricule" class="matricule" value="<?php echo htmlspecialchars($matricule) ?>" readonly></td>
+                                    <td><input type="text" name="matricule" class="matricule" value="<?php echo htmlspecialchars($matricule) ?>" readonly placeholder="Matricule automatique"></td>
                                 </tr>
                                 <tr>
                                     <th>DATE DE NAISSANCE</th>
@@ -311,7 +311,7 @@ if (session_status() === PHP_SESSION_NONE) {
                                 </tr>
                                 <tr>
                                     <th>LIEUX DE NAISSANCE</th>
-                                    <td><input type="text" name="naissance" class="naissance"></td>
+                                    <td><input type="search" name="naissance" class="naissance" placeholder="Entrez le lieu de naissance"></td>
                                 </tr>
                                 <tr>
                                     <th>SEXE</th>
@@ -348,7 +348,7 @@ if (session_status() === PHP_SESSION_NONE) {
         
 
         </div>
-    <footer>
+    <footer style="margin-top: 40px;">
     <?php include"footer.php" ?>
 </footer>
 </body>

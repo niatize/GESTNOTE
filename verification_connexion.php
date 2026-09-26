@@ -67,7 +67,7 @@
                             <tr>
                                 <td class="submit">
                                      
-                                    <button type="submit" id="back" style="color: black;">Retour</button>
+                                    <button type="button" id="back" style="color: black;">Retour</button>
                                     <input type="submit" value="Verifier"></td>
                             </tr>
                         </tbody>

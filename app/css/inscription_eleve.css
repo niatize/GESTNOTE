@@ -1,97 +1,178 @@
-th,.black th{
+/* Layout Global */
+#content_1 {
+    width: 95%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#content_1 h1 {
+    text-align: center;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 15px;
+    word-wrap: break-word;
+}
+
+form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+tr {
+    height: fit-content;
+}
+
+/* En-têtes (TH) */
+th, .black th {
     background-color: #3885f8;
+    color: #ffffff;
     border-radius: 4px;
     text-align: center;
     box-sizing: border-box;
-    width: 10%;
+    width: 25%;
+    padding: 8px;
+    font-size: 0.95rem;
 }
 
-th,td{
-    padding: 7px;
-    align-content: center;
-    position: relative;
+/* Cellules de champs (TD) */
+td {
+    width: 75%;
     height: fit-content;
+    box-sizing: border-box;
+    border-color: transparent;
+    padding: 0 0 0 8px;
 }
-.caption,.black .caption{
-    position: sticky;
-    top: 0;
+
+/* Inputs & Selects */
+input, select {
+    width: 100%;
+    height: 48px;
+    font-size: 16px;
+    border: 1px solid #ffd9005e;
+    border-radius: 4px;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    outline: none;
+    background-color: #ffffff;
+}
+.black input,.black select{
+    background-color: #ffffff;
+    color: black;
+}
+
+input::placeholder {
+    color: #888888;
+    font-size: 14px;
+}
+
+input[readonly] {
+    background-color: #f2f2f2;
+}
+
+/* Section d'envoi */
+.caption, .black .caption {
+    position: relative;
     padding: 10px;
     color: gold;
     font-size: larger;
     font-weight: bolder;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
     width: fit-content;
-    margin-left: auto;
+    margin: 10px auto;
     box-sizing: border-box;
-    margin-right: auto;
-    label{
-        color: #da7420;
-    }
-    button,.black button{
-        padding: 5px;
-        font-weight: 1000;
-        margin-left: 10px;
-        font-size: large;
-        box-sizing: border-box;
-    }
-}
-tr{
-    height: fit-content;
-}
-td{
-    width: 90%;
-    height: fit-content;
-    box-sizing: border-box;
-    border-color: transparent;
-}
-input,select{
-    width: 100%;
-    height:50px;
-    font-size: 18px;
-    border-color: #ffd9005e;
-    box-sizing: border-box;
-}
-#add{
-    background-color: royalblue;
-    padding: 5px;
-    color: #FFFFFF;
-    font-weight: 1000;
-    border-radius: 100px;
-    font-size: x-large;
-    transform: scale(1);
-    border: none;
-    transition: .3s;
-}
-#add:hover{
-    transform: scale(1.1);
-    border: none;
-    transition: .3s;
-    box-shadow: 0 0 4px 2px black;
 }
 
-.black #add{
+.caption label {
+    color: #da7420;
+}
+
+.caption button, .black button {
+    padding: 8px 20px;
+    font-weight: 1000;
+    font-size: large;
+    box-sizing: border-box;
+}
+
+#add {
+    background-color: royalblue;
+    color: #FFFFFF;
+    border-radius: 100px;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+#add:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.4);
+}
+
+.black #add {
     background-color: royalblue;
     color: #FFFFFF;
 }
-.black #add:hover{
-    box-shadow: 0 0 4px 2px;
+
+.black #add:hover {
+    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.5);
 }
-@media (max-width:250px) {
-    td{
-        width: 20px;
-        font-size: 5px;
+
+/* Adaptation Écrans Moyens & Tablettes (<= 768px) */
+@media (max-width: 768px) {
+    th, .black th {
+        width: 35%;
+        font-size: 0.85rem;
     }
-    th{
-        font-size: 10px;
-        padding: 1px;
-        width: 30px;
-        box-sizing: border-box;
+    
+    td {
+        width: 65%;
     }
-    table,form{
+}
+
+/* Adaptation Mobiles (<= 580px) */
+@media (max-width: 580px) {
+    table, tbody, tr, th, td {
+        display: block;
         width: 100%;
     }
-    input,select{
-        width: 100px;
-        height: 25px;
+
+    tr {
+        margin-bottom: 12px;
+    }
+
+    th, .black th {
+        width: 100%;
+        border-radius: 4px 4px 0 0;
+        text-align: left;
+        padding: 8px 12px;
+    }
+
+    td {
+        width: 100%;
+        padding: 0;
+    }
+
+    input, select {
+        border-radius: 0 0 4px 4px;
+        height: 44px;
+    }
+
+    .caption {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #add {
+        width: 100%;
     }
 }

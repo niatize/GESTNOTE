@@ -1,224 +1,185 @@
-.div{
-    width: fit-content;
-    height: fit-content;
-    background-color: transparent;
-}
-h1{
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-}
-main{
-    h1{
-        background-color: #04c5f5bb;
-        height: 70px;
-    }
-    li{
-        background-color: transparent;
-    }
-    a{
-        font-weight: bolder;
-        font-size: larger;
-    }
-    a::before{
-        content: none;
-    }
-    hr{
-        font-weight: bolder;
-        font-size: larger;
-    }
+/* ==========================================================================
+   GESTNOTE - Saisis CSS (Base Desktop)
+   ========================================================================== */
 
-.classes,.black .classes{
-    position: sticky;
-    top: 0;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 800px;
-    align-items: center;
-    width: 20vw;
-    text-align: center;
-    font-size: large;
-    overflow: scroll;
-    font-weight: bolder;
-    position: relative;
-    gap: 40px;
-    a:hover{
-        color: gold;
-    }
-
-}
-.classe ,.black .classe{
-    a,.black a{
-    background-color: #102c80d8;
-    width: 90%;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    a:hover{
-        background-color: #102c80d8;
-        width: 90%;
-        transform: scale(1.005);
-        transition: .3;
-        text-align: center;
-    }
-    width: 90%;
-    background-color: transparent;
-}
-.classe:hover{
-.black a,a{
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    width: fit-content;
-}
-
-}
-.matiere{
-    background-color: transparent;
-    width: 80%;
-    display: flex;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    overflow-x: scroll;
-    justify-content: space-around;
-    align-items: center;
-    gap: 40px;
-    overflow-wrap: break-word;
-}
-.matier{
-    background-color: transparent;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    a{
-    background-color: #e4920f83;
-        width: fit-content;
-        margin-left: 20Px;
-        border-radius: 40px;
-        width: 300px;
-        text-align: center;
-    }
-    a:hover{
-        box-shadow: 0 0 2px 2px;
-    }
-    a::before{
-        content: none;
-    }
-}
-.input_note,.black .input_note{
-    z-index: -2;
-    position: absolute;
-    top: 70px;
-    height: 79.5%;
-    right: 0;
-    overflow: scroll;
-    width: 80%;
-    text-align: center;
-    padding: 10px;
-}
-strong,.black strong{
-    color: goldenrod;
-}
-.black .input_note{
-    color: white;
-}
-#p{
-    font-size: larger;
-    font-weight: bolder;
-    color: red;
-}
-.black div{
-    z-index: 1;
-}
-#insertion_de_note,.black #insertion_de_note{
-    position: absolute;
-    top: 170px;
-    right: 0;
-    width: 80%;
-    height: 600px;
-    overflow: scroll;
-}
-th{
-    padding: 10px;
-    border-radius: 10px;
-    font-weight: bolder;
-    background-color: royalblue;
-    border: none;
-    color: white;
-}
-form,table{
-    width: 100%;
-    overflow: scroll;
-}
-table{
-    overflow: scroll;
-    padding: 10px;
-    border: none;
-}
-tr{
-    overflow-x: scroll;
-    width: 70vw;
-}
-.black td,td{
-    background-color: #293e7fcf;
-    color: white;
-}
-.nom{
-    width: 1560px;
-}
-.n{
-    width: 200px;
-}
-.note{
-    width: 300px;
-}
-.cc{
-    width: 150px;
-}
-.eval{
-    width: 150px;
-}
-[type="submit" ]{
-    padding: 10px;
+*, *::before, *::after {
     box-sizing: border-box;
-    font-weight: bolder;
-    background-image: linear-gradient(to left, #059669,#1D4ED8);
-    font-size: larger;
-    border-radius: 10px;
-    animation: color 5s infinite ;
-    margin-top: 20px;
-    display: flex;
-    gap: 5px;
-    color: white;
-    align-items: center;
 }
-.submit_div{
+
+/* Layout Desktop avec CSS Grid pour éviter les conflits de position */
+.content_1 {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto auto 1fr;
+    min-height: 800px;
+    width: 100%;
+}
+
+/* Sidebar Classes (Colonne 1) */
+.classes, .black .classes {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
+}
+.black .classes{
+    background-color: var(--header, #0f172a1f);
+}
+.classe, .black .classe {
+    width: 90%;
+}
+
+.classe a, .black .classe a {
+    background-color: #102c80d8;
+    color: white;
+    width: 100%;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 12px 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.classe a.active, .black .classe a.active {
+    background-color: #b45309 !important;
+    color: black !important;
+    font-weight: bold;
+}
+
+/* Barre Matières (Colonne 2, Ligne 1) */
+.matiere {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.matier a {
+    background-color: #e4920f;
     color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
 }
-input,.black input{
-    width: 100%;
-    border: none;
-    background-color: transparent;
-    color: white;
+
+.matier a.active-mat {
+    background-color: #b45309 !important;
+    color: gold !important;
+    font-weight: bold;
+    border: 2px solid gold;
 }
-}
-.black th{
+
+/* Zone d'information (Colonne 2, Ligne 2) */
+.input_note, .black .input_note {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: center;
     padding: 10px;
+}
+
+strong { color: #b45309; }
+
+/* Conteneur Tableau (Colonne 2, Ligne 3) */
+#insertion_de_note, .black #insertion_de_note {
+    grid-column: 2;
+    grid-row: 3;
+    padding: 0 20px 20px 20px;
+    overflow-x: auto;
+}
+
+.barre_sequence_recherche {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 12px 18px;
     border-radius: 10px;
-    font-weight: bolder;
-    background-color: royalblue;
-    border: none;
+    margin-bottom: 15px;
+}
+
+.black .barre_sequence_recherche {
+    background-color: #1e293b;
+    color: #ffffff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 12px 8px;
+    background-color: #102c80d8;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid transparent;
+    background-clip: padding-box;
+}
+
+.black th { background-color: #1e293b; }
+
+td {
+    background-color: #ffffff;
+    color: #1e293b;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+}
+
+.black td {
+    background-color: #1e293b;
+    color: white;
+    border-color: #334155;
+}
+
+.nom { width: 35%; }
+.n { width: 50px; }
+.cc, .eval { width: 110px; }
+.seq_col { width: 150px; }
+
+input, .black input {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 6px;
+    background-color: #f8fafc;
+}
+
+.black input {
+    background-color: #0f172a;
     color: white;
 }
-.black #text{
+
+[type="submit"] {
+    padding: 12px 25px;
+    font-weight: bold;
+    background: linear-gradient(to left, #059669, #1D4ED8);
+    border-radius: 10px;
+    border: none;
     color: white;
+    cursor: pointer;
+}
+
+.submit_div {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+main a::before{
+    content: none;
+}
+main a:hover{
+    background-color: #f46a0197 !important;
 }

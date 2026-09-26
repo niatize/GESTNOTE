@@ -5,6 +5,12 @@
     color: black;
     box-sizing: border-box;
 }
+
+html, body {
+    overflow-x: hidden;
+    position: relative;
+}
+
 :root{
  --header:#0f172a;
  --h1:#04C5F5;
@@ -16,27 +22,37 @@
  --th_backgrount:#3885F8;
  --srong_color:#DAA520;
 }
-    /* pour fixer et styliser mon header */
+
+/* pour fixer et styliser mon header */
 header{
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    backdrop-filter: bleur(100%);
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important;
+    backdrop-filter: blur(10px);
     box-shadow: 0 0 2px 1px;
     display: flex;
-    align-items: center;
+    align-items: initial;
     font-weight: 600;
-    z-index: 3;
     box-sizing: border-box;
+    height: 90px; /* Hauteur fixe définie pour un calage parfait du main */
 }
+
+/* Ajustement automatique du main sur toutes les pages standard */
+main {
+    top: 280px;
+    width: 100%;
+}
+
 .black header,.black footer,footer{
     backdrop-filter: blur(10px);
     background-color: var(--header);
     color: white;
     backdrop-filter: blur(50px);
-    }
-        /* style pour personnaliser le logo */
+}
+
+/* style pour personnaliser le logo */
 .header_parent,.back .header_parent{
     padding: 20px;
     width: 100%;
@@ -46,26 +62,33 @@ header{
     background-color: var(--header);
     color: white;
 }
+
 .headerlogo{
     width: 20%;
+    height: 60px;
     display: flex; 
     align-items: center;
     gap: 20px;
+    height: fit-content;
+}
+
 .logo_div{
     width: 80%;
     font-size: 2vw;
+    height: 80px;
     text-align: center;
 }
-}
+
 .logo{
     width: 90px;
 } 
-            /* style de la navbar */
 
+/* style de la navbar */
 .nav_bar{
     width: 100%;
     background-color: transparent;
 }
+
 nav,ul {
     width: 100%;
     display: flex;
@@ -74,36 +97,46 @@ nav,ul {
     align-items: center;
     background-color: transparent;
 }
-        /* style pour le profile de l'utilisateur */
+
+/* style pour le profile de l'utilisateur */
 .user_profile{
     width: 20%;
     display: flex;
     justify-content: left;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     padding: 10px;
     box-sizing: border-box;
 }
+
 .user_profile:hover{
     cursor: pointer;
 }
+
 .user_logo{
     width: 70px;
 }
+
 .logo_profile{
-    width: 100px;
+    width: 60px;
     border-radius: 100%;
-    height: 100px;
+    height: 60px;
+}
+.black .logo_profile{
+    background-color: transparent !important;
 }
 .content_2{
     display: none;
+    background-color: white;
 }
+
 .profile{
     width: 20%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
 a{
     padding: 10px;
     text-decoration: none;
@@ -115,6 +148,7 @@ a{
     box-sizing: border-box;
     color:white;
 }
+
 a::before{
     content: '';
     position: absolute;
@@ -122,39 +156,47 @@ a::before{
     left: 0;
     width: 0;
     height: 2px;
-    background-color: green;
+    background-color: goldenrod;
     transition: all .3s ease;
     border-radius: 20px;
 }
+
 a:hover::before{
     width: 100%;
 }
+
 a:hover{
     color: blue;
     transform: scale(1.05);
     transition: .3s;
 }
+
 .block{
     display: block;
 }
- 
+
 .none{
     display: none;
 }  
+
 .flex{
     display: flex;
-}         /*   positionnement du boutton retour de l'option de profile */
+}
+
+/* positionnement du boutton retour de l'option de profile */
 .back{
     color: black;
     position: absolute;
     top: 0;
 }
+
 .burger{
     background-color: white;
     height: 5px;
     width: 70px;
     border-radius: 20px;
 }
+
 .menue_burger{
     display: flex;
     flex-direction: column;
@@ -162,87 +204,105 @@ a:hover{
     justify-content: space-around;
     height: 50px;
     width: fit-content;
-    
 }
+
 .burger_1{
-        display: none;
+    display: none;
 }
+
 .burger_2{
     position: relative;
     top: 15px;
     transform: rotate(45deg);
 }
+
 .burger_3{
     position: relative;
     top: -11px;
     transform: rotate(-45deg);
 }
+
 .menue_burger{
     display: none;
 }
+
 .auther{
     width: 100%;
     display: flex;
+    height: 80px;
     align-items: center;
 }
+
 .black *{
     background-color:black;
     color: white;
 }
+
 .black .burger{
     background-color: white;
 }
+
 /* suppression des listes de la balise ul*/
 li{
     list-style: none;
     background-color: transparent;
 }
+
 .gap{
     display: flex;
     gap: 100px;
 }
+
 .logo_name{
     color: hwb(198 0% 0%);
     font-size: 2vw;
 }
+
 .thème{
     font-size: 4vw;
     color: red;
     background-color: transparent;
 }
+
 a:hover{
     color: #0056B3;
 }
- #a{
+
+#a{
     color: #0056B3;
 }
+
 #a::before{
     content: '';
     width: 100%;
 }
+
 .logo_name {
     color: #00a2ff;
 }
+
 .user_name{
-    position: relative;
-    left: 40px;
-    width: 100%;
     font-size: xx-large;
     color: white;
+    color: #00a2ff;
 }
+
 span{
     color: #00a2ff;
 }
+
 .black * span{
     background-color: transparent;
     color: #00a2ff;
 }
+
 h1,.black h1{
     background-color: #04c5f560;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
 }
+
 h3{
     text-align: center;
     padding: 10px;
@@ -251,8 +311,8 @@ h3{
     font-weight: bolder;
     font-size: 24px;
 }
-.black 
-h3{
+
+.black h3{
     text-align: center;
     padding: 5px;
     font-weight: bolder;
@@ -260,6 +320,7 @@ h3{
     font-weight: bolder;
     font-size: 24px;
 }
+
 .footer_container{
     display: flex;
     flex-wrap: wrap;
@@ -268,40 +329,52 @@ h3{
     text-align: center;
     box-sizing: border-box;
 }
+
 footer,.div{
     box-sizing: border-box;
     color: white;
 }
+
 footer{
     padding: 6px;
 }
+
 .black .div{
     background-color: transparent;
 }
+
 .black .footer_container,.black .texte{
     background-color: transparent;
 }
+
 .div a{
     background-color: transparent;
 }
+
 .black .header_parent,.black .auther{
     background-color: var(--header);
 }
+
 .black .footer_logo{
     background-color: transparent;
 }
+
 .black a{
     background-color: transparent;
 }
+
 .black li{
     background-color: transparent;
 }
+
 .black .logo_name{
     background-color: transparent;
 }
+
 .black .headerlogo{
     background-color: transparent;
 }
+
 #texte{
     color: white;
 }

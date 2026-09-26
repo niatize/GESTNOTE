@@ -1,165 +1,223 @@
-@media (max-width:1070px) {
-    .auther{
-        z-index: 3;
+/* ==========================================================================
+   GESTNOTE - All Style Responsive CSS (Header, Content & Footer)
+   ========================================================================== */
+
+@media (max-width: 1070px) {
+
+    /* --- PANNEAU LATÉRAL DE NAVIGATION (.auther) DIRECTEMENT SOUS LE HEADER --- */
+    .auther {
+        z-index: 100000 !important;
         color: white;
-        position: absolute;
-        top: 13.5vh;
-        right: 0;
-        height: 97vh;
-        display: none;
+        position: fixed !important;
+        top: 103px !important;                 /* Se positionne directement en dessous du header (80px) */
+        right: 0 !important;
+        height: calc(100vh - 80px) !important; /* Occupe toute la hauteur restante sous le header */
+        width: 320px !important;               /* Largeur fixe et propre */
+        max-width: 85vw !important;            /* Évite de dépasser sur très petits écrans */
+        display: none;                         /* Activé via la classe .flex en JS */
         flex-direction: column;
-        justify-content: start;
-        align-items: start;
+        justify-content: flex-start;
+        align-items: flex-start;
         box-sizing: border-box;
-        backdrop-filter: blur(50px);
-        background-color: var( --header);
-        width: 50%;
+        backdrop-filter: blur(20px);
+        background-color: var(--header, #0f172a) !important;
+        padding: 60px 20px 20px 20px !important; /* Espace interne pour décomposer les éléments */
         overflow-x: hidden;
-        overflow-y: scroll;
+        overflow-y: auto;
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.5);
     }
-    nav,.ul{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        gap: 3vh;
+
+    /* Bouton de fermeture (Croix rouge) repositionné dans le coin supérieur droit du menu */
+    .menue_burger {
+        display: flex !important;
+        position: absolute !important;
+        top: 15px !important;
+        right: 15px !important;
+        z-index: 100001 !important;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .burger_2, .burger_3,
+    .black .burger_2, .black .burger_3 {
+        background-color: red !important; /* Croix de fermeture rouge */
+    }
+
+    .flex {
+        display: flex !important;
+    }
+
+    /* --- LISTE DES LIENS ET NAVIGATION --- */
+    nav, .ul {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        gap: 20px !important;
         box-sizing: border-box;
         background-color: transparent;
     }
-    .li{
-        padding: 5px;
+
+    .li {
+        padding: 0 !important;
         display: flex;
-        width: 100%;
+        width: 100% !important;
         background-color: transparent;
         box-sizing: border-box;
     }
-    .user_profile{
-        width: 100%;
-        display: flex;
-        justify-content: start;
+
+    .li a {
+        width: 100% !important;
+        text-align: left !important;
+        font-size: 1.05rem !important;
+        padding: 8px 0 !important;
     }
-    .black .li{
+
+    /* --- PROFIL UTILISATEUR EN BAS DU MENU --- */
+    .user_profile {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        margin-top: auto !important; /* Positionne le profil au bas du tiroir */
+        padding-top: 15px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .user_name {
+        font-size: 1.1rem !important;
+        left: 0 !important;
+    }
+
+    .headerlogo {
+        width: auto !important;
         background-color: transparent;
-    }
-    .menue_burger{
         display: flex;
+        align-items: center;
+        gap: 12px;
     }
-    .burger_2{
-        background-color: red;
-    }
-    .burger_3{
-        background-color: red;
-    }
-    .black .burger_2{
-        background-color: red;
-    }
-    .black .burger_3{
-        background-color: red;
-    }
-    .flex{
-        display: flex;
-    }
-    .black .auther{
-        backdrop-filter: blur(50px);
-    }
-    .black .menue_burger{
+
+    .logo_name {
+        color: #00a2ff;
         background-color: transparent;
+        font-size: 1.5rem !important;
     }
-    .log{
-        font-size: 4vw;
+
+    /* --- ADAPTATION DU CONTENU PRINCIPAL --- */
+    main {
+        min-height: auto !important;
+        height: auto !important;
     }
-.headerlogo {
-  width: 46%;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.logo_name {
-    color: #00a2ff;
-    background-color: transparent;
-  font-size: 5vw;
+
+    .content_1 {
+        display: flex !important;
+        flex-direction: column !important;
+        position: relative !important;
+        min-height: auto !important;
+        height: auto !important;
+        padding-bottom: 20px;
+    }
+
+    /* Bandeau scrollable des classes */
+    .classes, .black .classes {
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: 80px !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding: 10px !important;
+        gap: 10px !important;
+        justify-content: flex-start !important;
+        box-sizing: border-box;
+    }
+
+    .classe, .black .classe {
+        width: auto !important;
+        flex-shrink: 0;
+    }
+
+    .classe a, .black .classe a {
+        white-space: nowrap;
+        padding: 8px 16px !important;
+        width: fit-content;
+        font-size: 0.9rem !important;
+    }
+
+    /* Matières et formulaire */
+    .matiere, .input_note, .black .input_note {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        padding: 10px !important;
+        box-sizing: border-box;
+    }
+
+    #insertion_de_note, .black #insertion_de_note {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: 60vh !important;
+        overflow-y: auto !important;
+        padding: 10px !important;
+        box-sizing: border-box;
+    }
 }
 
-}
-@media (max-width:900px) {
-    .auther{
-    top: 15.5vh;
-    font-size: 14px;
-}
-}
-@media (max-width:800px) {
-    .auther{
-    top: 14.5vh;
-    font-size: 17px;
-}
-.user_name{
-    font-size: 24px;
-    position: relative;
-    left: 70px;
-}
-.user_logo{
-    width: 30px;
-}
-h1{
-    font-size: 3vw;
-}
-}
-@media (max-width:700px) {
-    .burger{
-        width: 60px;
+/* --- ÉCRANS MOBILES PLEINE LARGEUR --- */
+@media (max-width: 600px) {
+    .auther {
+        width: 100vw !important; /* Prend toute la largeur sur mobile */
+        max-width: 100vw !important;
     }
-    .auther{
-    top: 16.5vh;
-}
-}
-@media (max-width:600px) {
-    .auther{
-        width: 100;
-        font-size: 14px;
-    top: 16.5vh;
-    justify-content: start;
-}
-h1{
-    font-size: 5vw;
-}
-}
-@media (max-width:375px) {
-    .li{
-        padding: 10px;
-        box-sizing: border-box;
+
+    .barre_sequence_recherche {
+        flex-direction: column !important;
+        gap: 10px !important;
+        align-items: stretch !important;
     }
-.logo{
-    display: none;
-} 
-.logo_name {
-    color: #00a2ff;
-  font-size: 10vw;
-}
-.burger{
-    width: 60px;
-    justify-content: right;
-}.header_parent{
-    padding: 5px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-    .auther{
-        top: 9.1vh;
-        width: 100%;}
-}
-@media (max-width:200px) {
-    .li{
-        padding: 10px;
-        box-sizing: border-box;
+
+    .search_block .input_search {
+        width: 100% !important;
+    } 
+main {
+        min-height: auto !important;
+        height: auto !important;
     }
-    .auther,.ul{
-        width: 100%;
-    justify-content: space-around;}
 }
-body{
+
+@media (max-width: 375px) {
+    .logo {
+        display: none;
+    } 
+main {
+        min-height: auto !important;
+        height: auto !important;
+    }
+
+    .logo_name {
+        font-size: 1.3rem !important;
+    }
+}
+
+/* --- FIX GLOBAL ANTI-OVERFLOW ET FOOTER --- */
+html, body {
     overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: var(--bg-color, #0b1329);
+}
+
+footer {
+    margin-top: auto;
 }
